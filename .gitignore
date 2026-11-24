@@ -1,0 +1,11 @@
+.env
+.pytest_cache
+.idea
+.agents
+.vscode
+
+data
+data/*
+
+__pycache__
+

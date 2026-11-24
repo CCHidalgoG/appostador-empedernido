@@ -1,0 +1,2970 @@
+7/14/26, 6:56 PM
+
+Impect - Glossary
+
+play_circle language apps person
+Dashboard
+KPIs
+
+arrow_back
+
+API
+Swagger
+
+Documentation
+
+Authentication
+
+Data Versions
+
+Event Variables
+
+Changelog
+
+Repositorie
+
+Context Variables
+Granular KPIs
+
+Endpoint Documentation
+
+Player Ratios & Scores
+
+V5 Master Data
+
+Squad Ratios & Scores
+
+The Master Data Endpoints provide all foundational (static) information required to interpret and connect IMPECT’s
+analytical data.
+
+Set Pieces
+
+They contain comprehensive details about the core entities of the IMPECT data model, including iterations,
+matches, squads, players, and coaches.
+
+Models
+
+These endpoints serve as the structural backbone of the IMPECT ecosystem, ensuring consistent identification,
+relationships, and metadata across all analytical layers of the API.
+
+API
+
+▸
+
+home
+star_border
+extension
+manage_search
+percent
+percent
+flag
+insert_chart_outlined
+api
+
+Cristian Hidalgo
+
+/iterations
+
+https://api.impect.com/v5/customerapi/iterations
+This endpoints lists all iterations. An iteration always represents one season of a competition and forms the
+basis of the entire access and rights structure of the API.
+Key
+
+Description
+
+id
+
+The unique ID of the iteration. An iteration represents one season of one
+competition.
+
+season
+
+The season (e.g. "25/26", "2026") of the iteration.
+
+competition
+
+https://glossary.impect.com/api-design?tab=1
+
+Child Key
+
+name
+
+The name of the competition.
+
+id
+
+The ID of the competition.
+1/29
+
+7/14/26, 6:56 PM
+
+Impect - Glossary
+
+Key
+
+Dashboard
+KPIs
+Context Variables
+
+Description
+
+type
+
+The type of the competition.
+
+countryId
+
+The country ID of the competition.
+
+gender
+
+The gender of the competition.
+
+ageGroup
+
+The age group of the competition ("ADULT" or "YOUTH").
+
+Player Ratios & Scores
+
+Cristian Hidalgo
+
+dataVersion
+
+The dataVersion of the iteration.
+
+lastChangeTimestamp
+
+The last time a match within the iteration was changed (ISO 8601 UTC datetime
+format).
+
+idMappings
+
+The IDs of the iteration from other data providers.
+
+Granular KPIs
+
+Squad Ratios & Scores
+
+▸
+
+home
+star_border
+extension
+manage_search
+percent
+percent
+flag
+insert_chart_outlined
+api
+
+play_circle language apps person
+
+Child Key
+
+/matches
+
+Set Pieces
+https://api.impect.com/v5/customerapi/iterations/{iterationId}/matches
+Models
+API
+
+https://glossary.impect.com/api-design?tab=1
+
+Lists all matches within a given iteration. Contains information about the competing teams, the scheduled date,
+the last time a match was changed (lastCalculationDate) and more. Future matches are available as well. The key
+available informs whether IMPECT has collected and published data for a given match.
+Key
+
+Description
+
+iterationId
+
+The ID of the iteration the match is a part of.
+
+id
+
+The ID of the match.
+
+homeSquadId
+
+The squad ID of the home team.
+
+awaySquadId
+
+The squad ID of the away team.
+
+scheduledDate
+
+The date and time of the kick off (ISO 8601 UTC datetime format).
+
+lastCalculationDate
+
+The last time the data of the match was changed (ISO 8601 UTC datetime format).
+
+matchDay
+
+Contains the name of the matchday (in German) and the index of the matchday (starting with 0).
+
+available
+
+The status of the match. If the value is "TRUE", data of this match is available.
+2/29
+
+7/14/26, 6:56 PM
+
+Key
+
+Description
+
+idMappings
+
+The IDs of the match from other data providers.
+
+play_circle language apps person
+
+Cristian Hidalgo
+
+KPIs
+
+▸
+
+Dashboard
+
+/squads
+
+Context Variables
+
+https://api.impect.com/v5/customerapi/iterations/{iterationId}/squads
+
+Granular KPIs
+
+Lists all squads available for a given iteration. Contains information about squad identity, type, and accessibility.
+
+Player Ratios & Scores
+Squad Ratios & Scores
+Set Pieces
+Models
+API
+
+▸
+
+home
+star_border
+extension
+manage_search
+percent
+percent
+flag
+insert_chart_outlined
+api
+
+Impect - Glossary
+
+Key
+
+Description
+
+id
+
+The ID of the squad.
+
+name
+
+The name of the squad.
+
+countryId
+
+The ID of the country of the squad.
+
+type
+
+The type of the squad (e.g. "CLUB", "NATIONAL_TEAM").
+
+gender
+
+The gender of the squad.
+
+idMappings
+
+The IDs of the squad from other data providers.
+
+access
+
+Indicates whether the user has access to this squad’s data. Usually true for all squads of an accessible
+iteration; in rare cases only true for individually licensed squads.
+
+/players
+
+https://api.impect.com/v5/customerapi/iterations/{iterationId}/players
+Lists all players available for a given iteration. Lists all players who have been part of a squad in at least one
+match of the iteration — including those who were substitutes or unused bench players and did not appear on the
+pitch. Contains information about player identity, nationality, physical attributes, and mapping to external data
+providers.
+
+https://glossary.impect.com/api-design?tab=1
+
+3/29
+
+7/14/26, 6:56 PM
+
+Dashboard
+KPIs
+Context Variables
+Granular KPIs
+Player Ratios & Scores
+Squad Ratios & Scores
+
+Key
+
+Description
+
+id
+
+The ID of the player.
+
+firstname
+
+The first name of the player.
+
+lastname
+
+The last name of the player.
+
+commonname
+
+The full name of the player.
+
+birthdate
+
+The birthdate of the player.
+
+birthplace
+
+The place of origin of the player.
+
+leg
+
+The player’s strong leg ("RIGHT", "LEFT", "BOTH").
+
+countryIds
+
+The list of countries of the player.
+
+gender
+
+The gender of the player.
+
+idMappings
+
+The IDs of the player from other data providers.
+
+play_circle language apps person
+
+Cristian Hidalgo
+
+Set Pieces
+Models
+API
+
+▸
+
+home
+star_border
+extension
+manage_search
+percent
+percent
+flag
+insert_chart_outlined
+api
+
+Impect - Glossary
+
+/coaches
+
+https://api.impect.com/v5/customerapi/iterations/{iterationId}/coaches
+Lists all coaches available for a given iteration. Only coaches who were officially present in at least one match for
+their team are included. Contains information about coaches identity, nationality, physical attributes, and
+mapping to external data providers.
+
+https://glossary.impect.com/api-design?tab=1
+
+Key
+
+Description
+
+id
+
+The ID of the coach.
+
+name
+
+The full name of the coach.
+
+firstname
+
+The first name of the coach.
+
+lastname
+
+The last name of the coach.
+
+shortname
+
+The short name of the coach.
+4/29
+
+7/14/26, 6:56 PM
+
+Dashboard
+KPIs
+
+Key
+
+Description
+
+birthdate
+
+The birthdate of the coach.
+
+gender
+
+The place of origin of the coach.
+
+countryIds
+
+The list of countries of the coach.
+
+idMappings
+
+The IDs of the player from other data providers.
+
+play_circle language apps person
+
+Cristian Hidalgo
+
+Granular KPIs
+Player Ratios & Scores
+Squad Ratios & Scores
+
+▸
+
+Context Variables
+
+/stadiums
+
+https://api.impect.com/v5/customerapi/iterations/{iterationId}/stadiums
+Lists all stadiums associated with the teams in a given iteration. Includes stadium identity, dimensions (pitch
+size), address information, time zone configuration, and mapping to external data provider IDs.
+
+Set Pieces
+Models
+API
+
+▸
+
+home
+star_border
+extension
+manage_search
+percent
+percent
+flag
+insert_chart_outlined
+api
+
+Impect - Glossary
+
+Key
+
+Description
+
+id
+
+The unique ID of the stadium.
+
+pitchLength
+
+The pitch length of the stadium (in meters).
+
+pitchWidth
+
+The pitch width of the stadium (in meters).
+
+name
+
+The official name of the stadium.
+
+address
+
+The address of the stadium (street / location data).
+
+timeZone
+
+The time zone of the stadium location (IANA format, e.g. "Europe/London").
+
+idMappings
+
+The IDs of the stadium from other data providers.
+
+/countries
+
+https://api.impect.com/v5/customerapi/countries
+
+https://glossary.impect.com/api-design?tab=1
+
+5/29
+
+7/14/26, 6:56 PM
+
+Impect - Glossary
+
+play_circle language apps person
+
+home
+star_border
+extension
+manage_search
+percent
+percent
+flag
+insert_chart_outlined
+api
+
+Lists all countries available in the IMPECT database. Contains information about country names and codes in
+Cristian
+various standards such as ISO and FIFA. While ISO codes should be used to identify player nationalities,
+FIFA Hidalgo
+codes can be more appropriate for assigning iterations — for example, Scotland has the ISO code "GB" but a
+distinct FIFA code for "Scotland".
+Dashboard
+KPIs
+Context Variables
+Granular KPIs
+Player Ratios & Scores
+
+Key
+
+Description
+
+id
+
+The ID of the country.
+
+name
+
+The name of the country (in German).
+
+isoName
+
+The ISO country name.
+
+isoCode
+
+The ISO country code (ISO 3166-1 alpha-3).
+
+fifaName
+
+The FIFA country name.
+
+fifaCode
+
+The FIFA country code.
+
+Squad Ratios & Scores
+Set Pieces
+
+V5 Iteration Level Data
+
+Models
+
+The Iteration Level Endpoints provide IMPECT data aggregated on season level (iteration level).
+
+API
+
+All KPIs and Ratios & Scores are available for both, teams and players, offering a comprehensive overview of their
+performance across an entire season.
+
+▸
+
+All values are already divided by the number of matches or match shares, resulting in per-match values for players
+and teams.
+/squad-kpis
+
+https://api.impect.com/v5/customerapi/iterations/{iterationId}/squad-kpis
+This endpoint provides KPI values for squads on season level. It returns the number of matches analyzed and
+the list of KPIs with their respective values, allowing contextualized squad performance analysis.
+Key
+squadId
+
+https://glossary.impect.com/api-design?tab=1
+
+Child Key
+
+Description
+The unique ID of the squad for which the KPIs are provided.
+
+6/29
+
+7/14/26, 6:56 PM
+
+Impect - Glossary
+
+Key
+matches
+kpis
+
+Dashboard
+
+Description
+
+play_circle language apps person
+
+Cristian Hidalgo
+
+Indicates how many matches were included in the calculation of KPI values for this squad.
+kpiId
+
+The unique ID of the KPI that this record refers to.
+
+value
+
+The per-match value of the KPI for a team in the given iteration
+
+KPIs
+
+▸
+
+Context Variables
+/squad-scores
+
+Granular KPIs
+https://api.impect.com/v5/customerapi/iterations/{iterationId}/squad-scores
+Player Ratios & Scores
+
+This endpoint provides Ratio & Score values for squads on season level. It returns the number of matches
+analyzed and the list of Scores with their respective values, allowing contextualized squad performance analysis.
+
+Squad Ratios & Scores
+Key
+
+Set Pieces
+Models
+
+Child Key
+
+Description
+
+squadId
+
+The unique ID of the squad for which the squad scores are provided.
+
+matches
+
+Indicates how many matches were included in the calculation of Score & Ratio values
+for this squad.
+
+squadScores
+
+API
+
+▸
+
+home
+star_border
+extension
+manage_search
+percent
+percent
+flag
+insert_chart_outlined
+api
+
+Child Key
+
+squadScoreId
+
+The unique ID of the squad score that this record refers to.
+
+value
+
+The calculated sqaud score value for this squad in this iteration.
+
+/player-kpis
+
+https://api.impect.com/v5/customerapi/iterations/{iterationId}/squads/{squadId}/playerkpis
+This endpoint provides KPI values for individual players on season level, including contextual information such
+as position, play duration, and match shares. Each entry contains the list of KPIs and their respective per match
+values for the player on a position within the selected iteration. Players who appeared in more than one position
+will have separate entries for each position.
+
+https://glossary.impect.com/api-design?tab=1
+
+7/29
+
+7/14/26, 6:56 PM
+
+Impect - Glossary
+
+Key
+
+KPIs
+
+play_circle language apps person
+
+Cristian Hidalgo
+
+The unique ID of the player for whom the KPI values are provided.
+
+position
+
+The position of the player during the match (e.g. "CENTRAL_DEFENDER", "LEFT_WINGER").
+
+playDuration
+
+The total time in seconds that the player was on the pitch in the respective position.
+
+matchShare
+
+The total number of matches a player played in a specific position during the season. A
+match share equals 1 if a player plays the entire match, including injury time.
+
+kpis
+
+Granular KPIs
+
+Description
+
+playerId
+
+Context Variables
+kpiId
+
+The unique ID of the KPI that this record refers to.
+
+value
+
+The per match value of the KPI for this player on this postion within the selected iteration.
+
+Player Ratios & Scores
+Squad Ratios & Scores
+Set Pieces
+Models
+API
+
+▸
+
+home
+star_border
+extension
+manage_search
+percent
+percent
+flag
+insert_chart_outlined
+api
+
+Dashboard
+
+Child
+Key
+
+/player-scores
+
+https://api.impect.com/v5/customerapi/iterations/{iterationId}/squads/{squadId}/playerscores
+This endpoint provides Ratio & Score values for individual players on season level, including contextual
+information such as position, play duration, and match shares. Each entry contains the list of Ratios & Scores and
+their respective values for the given player on a given position within the selected iteration. Players who
+appeared in more than one position will have separate entries for each position.
+Key
+
+Description
+
+playerId
+
+The unique ID of the player for whom the score values are provided.
+
+position
+
+The position of the player during the match (e.g. "CENTRAL_DEFENDER",
+"LEFT_WINGER").
+
+playDuration
+
+The total time in seconds that the player was on the pitch in the respective position.
+
+matchShare
+
+The total number of matches a player played in a specific position during the season. A
+match share equals 1 if a player plays the entire match, including injury time.
+
+playerScores
+
+https://glossary.impect.com/api-design?tab=1
+
+Child Key
+
+playerScoreId
+
+The unique ID of the player score that this record refers to.
+
+8/29
+
+7/14/26, 6:56 PM
+
+Impect - Glossary
+
+Key
+
+Description
+
+value
+
+The calculated score value for this player in the given match or aggregation period.
+
+Cristian Hidalgo
+
+Dashboard
+KPIs
+Context Variables
+
+▸
+
+home
+star_border
+extension
+manage_search
+percent
+percent
+flag
+insert_chart_outlined
+api
+
+play_circle language apps person
+
+Child Key
+
+/player-scores-by-position
+
+https://api.impect.com/v5/customerapi/iterations/{iterationId}/squads/{squadId}/positions/{
+scores
+
+Granular KPIs
+Player Ratios & Scores
+Squad Ratios & Scores
+Set Pieces
+Models
+
+This endpoint provides Ratio & Score values for individual players on season level, including contextual
+information such as position, play duration, and match shares. Each entry contains the list of Ratios & Scores and
+their respective values for the given player on a given position within the selected iteration. Players who
+appeared in more than one position will have separate entries for each position.
+This endpoint provides the Player Scores for a specified position or group of positions. It should only be used
+when you want to create custom position groups — for example, combining "DEFENSIVE_MIDFIELD" and
+"CENTRAL_MIDFIELD" into one group.
+If players are always analyzed by individual positions, the regular player-scores endpoint should be used instead.
+That endpoint automatically uses the corresponding peer group for each position and is significantly faster —
+requiring only a single request instead of 11 requests to retrieve all players for an iteration.
+
+API
+
+Key
+
+▸
+
+Description
+
+playerId
+
+The unique ID of the player for whom the position-based score values are provided.
+
+playDuration
+
+The total time in seconds that the player was on the pitch in the respective position.
+
+matchShare
+
+The total number of matches a player played in a specific position during the season. A
+match share equals 1 if a player plays the entire match, including injury time.
+
+playerScores
+
+https://glossary.impect.com/api-design?tab=1
+
+Child Key
+
+playerScoreId
+
+The unique ID of the player score associated with this position.
+
+value
+
+The calculated score value for the player in the respective position.
+
+/player-profile-scores
+9/29
+
+7/14/26, 6:56 PM
+
+Impect - Glossary
+
+play_circle language apps person
+
+https://api.impect.com/v5/customerapi/iterations/{iterationId}/squads/{squadId}/positions/{
+Cristian Hidalgo
+profile-scores?minGames=0
+
+home
+star_border
+extension
+manage_search
+percent
+percent
+flag
+insert_chart_outlined
+api
+
+Dashboard
+KPIs
+
+This endpoint provides player profile scores (profile fit scores) based on custom player profiles created by the
+user, as well as IMPECT’s predefined standard profiles. Each record includes contextual information such as play
+duration and match share, along with the calculated profile fit scores for each relevant player profile. The
+minimum number of game (minGames) can be adjusted - the default value is 0. As the profile fit score is based
+on percentile values, the minimum games parameter influences the result.
+
+Context Variables
+
+Key
+
+Child Key
+
+Description
+
+playerId
+
+The unique ID of the player for whom the profile scores are provided.
+
+playDuration
+
+The total time in seconds that the player was on the pitch in the respective position.
+
+Player Ratios & Scores
+
+matchShare
+
+The total number of matches a player played in a specific position during the season. A
+match share equals 1 if a player plays the entire match, including injury time.
+
+Squad Ratios & Scores
+
+profileScores
+
+Granular KPIs
+
+profileName
+
+The name of the player profile used for this score. More information about the player
+prfoiles (e.g. included KPIs and weightings) can be found in the Definitions section
+(/player-profiles).
+
+value
+
+The calculated profile fit score for the player within the specified profile, based on the
+relevant KPIs and weights. A profile fit score of 100% means that all included KPIs and
+scores have a percentile value of 100%.
+
+Set Pieces
+Models
+API
+
+V5 Match Level Data
+The Match Level Endpoints provide IMPECT data per individual match.
+
+▸
+
+They contain KPIs and Ratios & Scores for both teams and players, event-level data and KPIs on event level, indepth set-piece data, and more.
+/match-info
+
+https://api.impect.com/v5/customerapi/matches/{matchId}
+Provides detailed match metadata including starting formations, player line-ups, and all in-game structural
+changes such as substitutions, tactical changes, and send-offs.
+
+https://glossary.impect.com/api-design?tab=1
+
+10/29
+
+7/14/26, 6:56 PM
+
+Impect - Glossary
+
+Key
+
+home
+star_border
+extension
+manage_search
+percent
+percent
+flag
+insert_chart_outlined
+api
+
+Dashboard
+
+Child Key
+
+Granular KPIs
+Player Ratios & Scores
+
+dateTime
+
+Date and time of the match (ISO 8601 UTC datetime format).
+
+lastCalculationDate
+
+Timestamp (ISO 8601 UTC datetime format) when the match data was
+last updated.
+
+iterationId
+
+The ID of the iteration the match belongs to.
+
+stadiumId
+
+The unique ID of the stadium where the match took place.
+
+squadHome /
+squadAway
+
+id
+
+ID of the respective home or away squad.
+
+coachId
+
+ID of the sqaud's coach.
+
+players
+
+Array of players who were part of the squad in the match, inluding:
+id – Unique ID of the player
+shirtNumber – Player's shirt number for this match
+
+startingPositions
+
+Array of starting players, including::
+playerId – Player ID
+position – Position of the player (e.g. "CENTRAL_DEFENDER")
+positionSide – positionSide of the player (e.g. "CENTER",
+"CENTER_RIGHT", "RIGHT")
+
+substitutions
+
+Array of substitution / tactical change, including:
+gameTime – Object with:
+• gameTime – formatted time (MM:SS.MS)
+• gameTimeInSec – time in seconds (float)
+playerId – Player affected by the change
+toPosition – Position the player moved to
+positionSide – positionSide the player moved to
+fromPosition – Previous position
+fromPositionSide – Previous positionSide
+exchangedPlayerId – Available for dataV4+: ID of exchanged player
+substitutionType – Type of change (e.g. "SUB_ON", "RED_CARD",
+"POSITION_CHANGE")
+
+startingFormation
+
+The formation used at the start of the match (e.g. "4-2-3-1").
+
+Models
+API
+
+https://glossary.impect.com/api-design?tab=1
+
+Cristian Hidalgo
+
+The unique ID of the match.
+
+Squad Ratios & Scores
+Set Pieces
+
+play_circle language apps person
+
+id
+
+KPIs
+Context Variables
+
+Description
+
+11/29
+
+7/14/26, 6:56 PM
+
+Impect - Glossary
+
+Key
+
+Description
+
+formations
+
+Array of formation change objects:
+gameTime – Time of formation change (string)
+gameTimeInSec – Time of change in seconds (float)
+formation – Formation active at that time
+
+Dashboard
+
+Cristian Hidalgo
+
+KPIs
+Context Variables
+Granular KPIs
+Player Ratios & Scores
+Squad Ratios & Scores
+Set Pieces
+Models
+
+▸
+
+home
+star_border
+extension
+manage_search
+percent
+percent
+flag
+insert_chart_outlined
+api
+
+play_circle language apps person
+
+Child Key
+
+/events
+
+https://api.impect.com/v5/customerapi/matches/{matchId}/events
+Returns the complete event stream of a match with full contextual information.
+Key
+
+Child
+
+index
+
+The number of the event, starting with zero for each match.
+
+id
+
+The unique ID of the event.
+
+gameTime
+
+gameTime
+
+The game time in a string format "MM:SS.MS(+InjuryTime)".
+
+gameTimeInSec
+
+The game time in seconds. 1st half starts at 0, 2nd half at 10,000. Extra
+time halves start at 20,000 and 30,000. The penalty shootout starts at
+40,000.
+
+API
+squadId
+player
+
+https://glossary.impect.com/api-design?tab=1
+
+Description
+
+Squad ID of the player on the ball. Unique ID for each squad in our
+database.
+id
+
+The Player ID of the player who touches the ball.
+
+position
+
+The player's position at the moment of the event (updated dynamically
+on event level). Positions: GOALKEEPER, CENTRAL_DEFENDER,
+RIGHT_WINGBACK_DEFENDER, LEFT_WINGBACK_DEFENDER,
+DEFENSE_MIDFIELD, CENTRAL_MIDFIELD, RIGHT_WINGER,
+LEFT_WINGER, ATTACKING_MIDFIELD, CENTER_FORWARD.
+
+positionSide
+
+The player's position side at the moment of the event (updated
+dynamically on event level). For central positions (CENTRAL_DEFENDER,
+DEFENSE_MIDFIELD, CENTRAL_MIDFIELD, CENTER_FORWARD) an
+algorithm detects the side (for ≥ 2 players on one position).
+
+12/29
+
+7/14/26, 6:56 PM
+
+Impect - Glossary
+
+Key
+
+home
+star_border
+extension
+manage_search
+percent
+percent
+flag
+insert_chart_outlined
+api
+
+Child
+
+Context Variables
+
+Cristian Hidalgo
+
+Pressure on the ball carrier (0% no pressure – 100% no ball control).
+Based on nearest-opponent distance and body part (incl. previous pass
+trajectory).
+
+actionType
+
+The actionType of an event.
+
+periodId
+
+The ID of the game period: 1 = 1st half, 2 = 2nd half, 3 = ET 1st half, 4 =
+ET 2nd half, 5 = Penalty Shootout.
+
+start
+
+Granular KPIs
+
+coordinates
+
+An object with x and y coordinates of the start location. You can find the
+pitch definition here.
+
+adjCoordinates
+
+The start coordinates of the action, where the coordinates of the team
+playing from right to left are inverted. Therefore, both teams are
+playing from left to right.
+
+packingZone
+
+The start Packing Zone for the event.
+
+pitchPosition
+
+Start location by 5 vertical zones: OWN_BOX, FIRST_THIRD,
+MIDDLE_THIRD, FINAL_THIRD, OPPONENT_BOX.
+
+lane
+
+Start location by 5 horizontal zones: CENTER, RIGHT_HALF_SPACE,
+LEFT_HALF_SPACE, RIGHT_WING, LEFT_WING.
+
+coordinates
+
+An object with x and y coordinates of the end location.
+
+adjCoordinates
+
+Adjusted x and y coordinates of the end location.
+
+packingZone
+
+The end Packing Zone for the event.
+
+pitchPosition
+
+End location by 5 vertical zones.
+
+lane
+
+End location by 5 horizontal zones.
+
+Player Ratios & Scores
+Squad Ratios & Scores
+Set Pieces
+Models
+end
+
+API
+
+action
+
+The action of a player. A more precise form of actionType.
+
+phase
+
+Phase of play for the given the event.
+
+duel
+
+https://glossary.impect.com/api-design?tab=1
+
+play_circle language apps person
+
+pressure
+
+Dashboard
+KPIs
+
+Description
+
+duelType
+
+Type of the duel (air vs ground). In the IMPECT event data, the duels are
+no single events (except of a ball win that occurs by a won ground duel).
+Duels are rather attached to existing events like passes, receptions,
+shots, etc.
+
+13/29
+
+7/14/26, 6:56 PM
+
+Impect - Glossary
+
+Key
+
+home
+star_border
+extension
+manage_search
+percent
+percent
+flag
+insert_chart_outlined
+api
+
+Description
+
+playerId
+
+ID of the opponent’s player faced in the duel (loser of the duel). The
+active player in the event listed under playerId is by definition the
+winner of the duel.
+
+distance
+
+Radial distance to the middle of the goal from the shooting location
+(meters).
+
+angle
+
+Angle towards the middle of the opponent’s goal (0°–90°).
+
+targetPoint
+
+Target point on the goal mouth. See Event Variables for a definition of
+the goal map.
+
+gk
+
+Available for dataV4+: Goalkeeper coordinates at the shot moment. For
+penalties, the dive point of the goalkeeper is given as well.
+
+woodwork
+
+Available for dataV4+: Indicates whether the ball hit the woodwork
+("LEFT_POST", "RIGHT_POST", "CROSSBAR", "CROSSBAR_LEFT_POST",
+or "CROSSBAR_RIGHT_POST").
+
+distance
+
+Radial distance from pass start to reception (meters).
+
+angle
+
+Polar angle (0°–360°). Towards opponent goal = 0°, right = 270°, left =
+90°, back = 180°.
+
+receiver
+
+Receiving player’s id and team type (teammate or opponent).
+
+Dashboard
+shot
+
+KPIs
+Context Variables
+Granular KPIs
+Player Ratios & Scores
+Squad Ratios & Scores
+Set Pieces
+
+pass
+
+Models
+API
+
+https://glossary.impect.com/api-design?tab=1
+
+play_circle language apps person
+
+Child
+
+Cristian Hidalgo
+
+currentAttackingSquadId
+
+Team in ball control. Events with very high pressure/low control are
+ignored so it represents possession sequences.
+
+bodyPart
+
+Legacy key for the body part used by the player. No distinction between
+left/right foot. Includes the previous pass height inside the value (e.g.
+"FOOT_LOW", "FOOT_HIGH"). We recommend using bodyPartExtended
+instead.
+
+bodyPartExtended
+
+New key for the body part used by the player.From dataV4 onwards it
+distinguishes FOOT_LEFT vs FOOT_RIGHT and introduces HAND for GK
+actions and throw-ins. For older dataVersions (pre dataV4) the value
+falls back to FOOT.
+The previous pass height is not included anymore (no FOOT_LOW or
+FOOT_HIGH). That information has been moved to the key
+previousPassHeight.
+
+previousPassHeight
+
+For receptions and actionType = "OUT": indicates whether the previous
+pass/shot was flat or high (above chest height).
+
+14/29
+
+7/14/26, 6:56 PM
+
+Impect - Glossary
+
+Key
+
+home
+star_border
+extension
+manage_search
+percent
+percent
+flag
+insert_chart_outlined
+api
+
+Child
+
+Description
+
+play_circle language apps person
+
+Cristian Hidalgo
+
+duration
+
+Duration of the event in seconds (time difference to the next event).
+
+Dashboard
+
+opponents
+
+Number of opponents still able to defend their own goal (closer to their
+goal than the ball).
+
+KPIs
+
+pxT
+
+Context Variables
+
+team
+
+Goal threat for the team on the ball (from the Packing Expected Threat
+model).
+
+opponent
+
+Goal threat for the team off the ball (from the Packing Expected Threat
+model).
+
+Granular KPIs
+
+distanceToGoal
+
+Radial distance between the ball and the center of the opponent’s goal
+(meters).
+
+Player Ratios & Scores
+
+result
+
+Result of a pass, dribble, or shot. Passes can be NEUTRAL (e.g. high
+pressure or foul). SUCCESS if reaching a teammate with pressure < 80.
+Passes to an opponent with pressure < 80 and passes out/offside are
+FAIL. Dribbles/shots are SUCCESS or FAIL with one exception: Dribbles
+followed by a foul have the result NEUTRAL.
+
+pressingPlayerId
+
+Available for dataV3+: ID of an defender who either
+(1) actively attacks the ball carrier with the intention to win the ball or
+(2) is within one meter to the ball carrier.
+
+fouledPlayerId
+
+Available for dataV3+: For FOUL events the playerId of the fouled player
+is given. If empty, the foul was hand play.
+
+distanceToOpponent
+
+Available for dataV3+: Distance to the nearest opponent:
+MORE_THAN_FOUR_METERS, FOUR_METERS, THREE_METERS,
+TWO_METERS, ONE_METER, LESS_THAN_ONE_METER.
+
+Squad Ratios & Scores
+Set Pieces
+Models
+API
+
+formation
+
+opponent
+
+setpiece
+
+https://glossary.impect.com/api-design?tab=1
+
+team
+
+Live formation of the team on the ball.
+
+opponent
+
+Live formation of the team off the ball.
+
+coordinates
+
+Available for dataV4+: Coordinates of the nearest opponent if ≤ 4 m.
+
+adjCoordinates
+
+Available for dataV4+: Adjusted coordinates of the nearest opponent
+(perspective of the team on the ball).
+
+id
+
+ID of the set piece phase the event is part of.
+
+subPhaseId
+
+ID of the set piece sub phase.
+
+mainEvent
+
+Whether the event is the main event of a set piece sub phase.
+15/29
+
+7/14/26, 6:56 PM
+
+play_circle language apps person
+
+Key
+
+Child
+
+Description
+
+dribble
+
+type
+
+Available for dataV4+: The type of a dribble. The available types are
+ONE_VS_ONE, CARRY, PROGRESSIVE_CARRY, STEPPING_IN, or
+ESCAPE_PRESSURE. See Event Variables for a detailed definition.
+
+result
+
+Available for dataV4+: For ONE_VS_ONE dribbles: The result of the
+dribble from the perspective of the dribbling player ("WINNER",
+"NEUTRAL", or "LOSER").
+
+Context Variables
+
+playerId
+
+Available for dataV4+: For ONE_VS_ONE dribbles only: The playerId of
+the defending player.
+
+Granular KPIs
+
+distance
+
+Available for dataV4+: The distance of the dribble.
+
+Dashboard
+KPIs
+
+Player Ratios & Scores
+Squad Ratios & Scores
+
+Cristian Hidalgo
+
+sequenceIndex
+
+Index splitting the match into sequences. A new sequence begins on
+ball control change (currentAttackingSquadId) or on a set piece
+execution.
+
+inferredSetPiece
+
+Indicates a set piece inferred from the preceding event (FOUL, OFFSIDE,
+OUT) when not visible in the footage.
+
+Set Pieces
+Models
+
+▸
+
+home
+star_border
+extension
+manage_search
+percent
+percent
+flag
+insert_chart_outlined
+api
+
+Impect - Glossary
+
+API
+
+/event-kpis
+
+https://api.impect.com/v5/customerapi/matches/{matchId}/event-kpis
+Provides all KPI values per event. Each record links a player, an event, and a specific KPI ID. On event-level the
+number of KPIs is limited to only stand-alone KPIs. All granular KPIs (KPI & Context Variable combinations) are
+only available on match and season level.
+Key
+
+https://glossary.impect.com/api-design?tab=1
+
+Child
+Key
+
+Description
+
+position
+
+The position of the player at the time of the event.
+
+playerId
+
+The unique ID of the player associated with the event.
+
+eventId
+
+The unique ID of the event to which this KPI value refers.
+
+kpiId
+
+The unique ID of the KPI that was measured for this specific event.
+
+16/29
+
+7/14/26, 6:56 PM
+
+Impect - Glossary
+
+Key
+value
+
+Dashboard
+
+play_circle language apps person
+
+Description
+
+Cristian Hidalgo
+
+The numerical KPI value associated with this event, typically representing a single in-game
+action or outcome.
+
+KPIs
+Context Variables
+Granular KPIs
+Player Ratios & Scores
+
+▸
+
+home
+star_border
+extension
+manage_search
+percent
+percent
+flag
+insert_chart_outlined
+api
+
+Child
+Key
+
+/player-kpis
+
+https://api.impect.com/v5/customerapi/matches/{matchId}/player-kpis
+Provides KPI values per player for the selected match. Includes position, play duration, match share and all
+KPIs recorded during the match.
+Key
+
+Squad Ratios & Scores
+
+Child
+Key
+
+matchId
+
+Set Pieces
+
+squadHome /
+squadAway
+
+Models
+API
+
+Description
+Unique ID of the match for which player KPIs are provided.
+
+id
+
+Unique ID of the squad (home or away).
+
+players
+
+Array of player objects belonging to the squad. Players can appear multiple times
+if they played on multiple positions
+Each player contains:
+• id – Unique ID of the player
+• position – Position of the player
+• playDuration – Number of Seconds the player played to that position
+• matchShare – The proportion of the total match duration on that position
+• kpis – Array of KPI objects, each containing:
+
+▸
+
+• kpiId – Unique ID of the KPI
+• value – KPI value for this player in the match
+
+/player-scores
+
+https://api.impect.com/v5/customerapi/matches/{matchId}/player-scores
+https://glossary.impect.com/api-design?tab=1
+
+17/29
+
+7/14/26, 6:56 PM
+
+Impect - Glossary
+
+play_circle language apps person
+
+Provides Score values per player for the selected match. Includes position, play duration, match share and all
+Cristian Hidalgo
+Score values calculated from KPIs.
+Child
+Key
+
+matchId
+
+KPIs
+
+squadHome /
+squadAway
+
+Context Variables
+Granular KPIs
+
+Description
+Unique ID of the match for which player scores are provided.
+
+id
+
+Unique ID of the squad (home or away).
+
+players
+
+Array of player objects belonging to the squad. Players can appear multiple times
+if they played on multiple positions
+Each player contains:
+• id – Unique ID of the player
+• position – Position during the match
+• playDuration – Number of Seconds the player played to that position
+• matchShare – The proportion of the total match duration on that position
+• playerScores – Array of score objects, each containing:
+
+Player Ratios & Scores
+Squad Ratios & Scores
+
+• playerScoreId – Unique ID of the playerScore
+• value – Score value for this player in the match
+
+Set Pieces
+Models
+API
+
+▸
+
+home
+star_border
+extension
+manage_search
+percent
+percent
+flag
+insert_chart_outlined
+api
+
+Key
+
+Dashboard
+
+/player-scores-by-position
+
+https://api.impect.com/v5/customerapi/matches/{matchId}/positions/{positions}/playerscores
+This endpoint provides Ratio & Score values for individual players on match level, including contextual
+information such as position, play duration, and match shares. Each entry contains the list of Ratios & Scores and
+their respective values for the given player on a given position within the selected iteration. Players who
+appeared in more than one position will have separate entries for each position.
+This endpoint provides the Player Scores for a specified position or group of positions. It should only be used
+when you want to create custom position groups — for example, combining "DEFENSIVE_MIDFIELD" and
+"CENTRAL_MIDFIELD" into one group.
+If players are always analyzed by individual positions, the regular player-scores endpoint should be used instead.
+That endpoint automatically uses the corresponding peer group for each position and is significantly faster —
+requiring only a single request instead of 11 requests to retrieve all players for an iteration.
+https://glossary.impect.com/api-design?tab=1
+
+18/29
+
+7/14/26, 6:56 PM
+
+Impect - Glossary
+
+Key
+matchId
+
+Dashboard
+
+squadHome /
+squadAway
+
+KPIs
+
+play_circle language apps person
+
+Description
+
+Cristian Hidalgo
+
+Unique ID of the match for which player scores are provided.
+id
+
+Unique ID of the squad (home or away).
+
+players
+
+Array of player objects belonging to the squad. Players can appear multiple times
+if they played on multiple positions
+Each player contains:
+
+Context Variables
+
+• id – Unique ID of the player
+• playDuration – Number of Seconds the player played to that position
+• matchShare – The proportion of the total match duration on that position
+• playerScores – Array of score objects, each containing:
+
+Granular KPIs
+Player Ratios & Scores
+
+• playerScoreId – Unique ID of the playerScore
+• value – Score value for this player in the match
+
+Squad Ratios & Scores
+Set Pieces
+
+▸
+
+home
+star_border
+extension
+manage_search
+percent
+percent
+flag
+insert_chart_outlined
+api
+
+Child
+Key
+
+Models
+API
+
+/set-pieces
+
+https://api.impect.com/v5/customerapi/matches/{matchId}/set-pieces
+Lists all set pieces including their subphases and aggregated KPI values such as xG.
+Key
+
+https://glossary.impect.com/api-design?tab=1
+
+Child Key
+
+Description
+
+id
+
+The unique ID of the set piece.
+
+matchId
+
+The ID of the match the set piece belongs to.
+
+squadId
+
+The ID of the squad executing the set piece.
+
+phaseIndex
+
+The index of the set-piece phase within the match.
+
+setPieceCategory
+
+The original category of the set piece (e.g. "FREE_KICK", "CORNER").
+
+adjSetPieceCategory
+
+The adjusted category of the set piece based on its location.
+
+setPieceExecutionType
+
+The execution type of the set piece (e.g. "DIRECT", "INDIRECT").
+19/29
+
+7/14/26, 6:56 PM
+
+home
+star_border
+extension
+manage_search
+percent
+percent
+flag
+insert_chart_outlined
+api
+
+Dashboard
+
+Impect - Glossary
+
+Child Key
+
+Description
+
+setPieceSubPhase
+
+id
+
+The unique ID of the subphase.
+
+index
+
+The sequential index of the subphase within the set piece.
+
+startZone
+
+The pitch zone where the subphase started (e.g.
+"LEFT_GOAL_KICK_ZONE").
+
+cornerEndZone
+
+The end zone of the corner.
+
+cornerType
+
+The type of corner (e.g. "CORNER_BLOCKED", "CORNER_CENTRAL").
+
+freeKickEndZone
+
+The end zone of the free kick.
+
+freeKickType
+
+The subtype of the free kick (e.g. "FREE_KICK_SHOT",
+"FREE_KICK_CROSS_CENTRAL").
+
+mainEventPlayerId
+
+The ID of the player executing the main event.
+
+mainEventOutcome
+
+The outcome of the main event.
+
+passReceiverId
+
+The ID of the player who received the main event.
+
+firstTouchPlayerId
+
+The ID of the player who made the first touch after the set piece.
+
+firstTouchWon
+
+Boolean value indicating whether the first touch was successful.
+
+indirectHeader
+
+The type of header used at the first touch (e.g. "FLICK_ON").
+
+secondTouchPlayerId
+
+The ID of the player who made the second touch.
+
+secondTouchWon
+
+Boolean value indicating whether the second touch was successful.
+
+aggregates
+
+Aggregated KPI metrics summarizing the outcome of the set-piece
+subphase:
+
+KPIs
+Context Variables
+Granular KPIs
+Player Ratios & Scores
+Squad Ratios & Scores
+Set Pieces
+Models
+API
+
+play_circle language apps person
+
+Key
+
+Cristian Hidalgo
+
+SHOT_XG – The expected goals (xG) value of all shots in the
+subphase.
+PACKING_XG – The packing-based expected goals value
+generated during the subphase.
+POSTSHOT_XG – The post-shot expected goal value (based on
+shot placement and trajectory).
+SHOT_AT_GOAL_NUMBER – The number of shots at goal
+resulting from the subphase.
+GOALS – The number of goals scored from the subphase.
+PXT_POSITIVE – The positive packing expected threat (PxT)
+contribution during the subphase.
+https://glossary.impect.com/api-design?tab=1
+
+20/29
+
+7/14/26, 6:56 PM
+
+Impect - Glossary
+
+Key
+
+Description
+
+play_circle language apps person
+
+Cristian Hidalgo
+
+BYPASSED_OPPONENTS – The number of opponents
+bypassed through passes or actions.
+BYPASSED_DEFENDERS – The number of defenders bypassed
+through passes or actions.
+
+Dashboard
+KPIs
+Context Variables
+
+▸
+
+home
+star_border
+extension
+manage_search
+percent
+percent
+flag
+insert_chart_outlined
+api
+
+Child Key
+
+Granular KPIs
+Player Ratios & Scores
+Squad Ratios & Scores
+
+/skillcorner-frame-mappings
+
+https://api.impect.com/v5/customerapi/matches/{matchId}/skillcorner-frame-mappings
+This endpoint provides the SkillCorner tracking frame and the corresponding IMPECT event index if a mapping
+between both datasets was successful.
+Key
+
+Child Key
+
+Description
+
+Set Pieces
+
+trackingExtraV3LastModified
+
+The timestamp indicating the last modification of the SkillCorner
+tracking data (ExtraV3 version).
+
+Models
+
+lastCalculationDate
+
+The timestamp of the last mapping calculation between IMPECT
+events and SkillCorner tracking frames.
+
+API
+
+mappings
+
+frame
+
+The SkillCorner tracking frame number.
+
+isMatched
+
+Boolean indicating whether the tracking frame has been
+successfully matched to an IMPECT event.
+
+impectEventIndex
+
+The corresponding IMPECT event index that this tracking frame is
+mapped to.
+
+Possible HTTP 404 responses and their meanings:
+
+https://glossary.impect.com/api-design?tab=1
+
+HTTP 404 Code
+
+Meaning
+
+NO_SKILLCORNER_DATA_AVAILABLE
+
+No SkillCorner data is available for this match (or we do not have an ID
+mapping to the SkillCorner match).
+
+NO_IMPECT_EVENT_DATA_AVAILABLE
+
+No IMPECT event data is available for this match.
+
+TRACKING_EVENT_MAPPING_ERROR
+
+No mapping was possible (e.g. the mapping ratio was too low).
+21/29
+
+7/14/26, 6:56 PM
+
+play_circle language apps person
+
+HTTP 404 Code
+
+Meaning
+
+IMPECT_LACKS_TRACKING_PERMISSION
+
+IMPECT has not received permission from SkillCorner to ingest their data.
+This can occur for new competitions. Please notify us if you encounter this
+message.
+
+ANY_OTHER_STATUS
+
+Unknown error.
+
+Dashboard
+
+Cristian Hidalgo
+
+KPIs
+
+▸
+
+Context Variables
+/squad-kpis
+
+Granular KPIs
+https://api.impect.com/v5/customerapi/matches/{matchId}/squad-kpis
+Player Ratios & Scores
+
+Provides KPI values per team (home and away) for the selected match.
+
+Squad Ratios & Scores
+
+Key
+
+Child Key
+
+matchId
+
+Set Pieces
+
+squadHome
+
+Models
+
+squadAway
+
+Description
+The unique ID of the match for which the squad KPIs are provided.
+
+id
+
+The unique ID of the home squad.
+
+kpis
+
+The list of KPI values for the home squad, including:
+kpiId – The unique ID of the KPI.
+value – The calculated value of the KPI for the home squad.
+
+id
+
+The unique ID of the away squad.
+
+kpis
+
+The list of KPI values for the away squad, including:
+kpiId – The unique ID of the KPI.
+value – The calculated value of the KPI for the away squad.
+
+API
+
+▸
+
+home
+star_border
+extension
+manage_search
+percent
+percent
+flag
+insert_chart_outlined
+api
+
+Impect - Glossary
+
+/squad-scores
+
+https://api.impect.com/v5/customerapi/matches/{matchId}/squad-scores
+Provides Score values per team (home and away) for the selected match.
+
+https://glossary.impect.com/api-design?tab=1
+
+22/29
+
+7/14/26, 6:56 PM
+
+Impect - Glossary
+
+Key
+
+Description
+
+matchId
+squadHome
+
+Dashboard
+
+squadAway
+
+Context Variables
+Granular KPIs
+
+play_circle language apps person
+
+Cristian Hidalgo
+
+The unique ID of the match for which the squad scores are provided.
+id
+
+The unique ID of the home squad.
+
+squadScores
+
+The list of score values for the home squad, including:
+squadScoreId – The unique ID of the squad score metric.
+value – The calculated value of the squad score for the home team in this match.
+
+id
+
+The unique ID of the away squad.
+
+squadScores
+
+The list of score values for the away squad, including:
+squadScoreId – The unique ID of the squad score metric.
+value – The calculated value of the squad score for the away team in this match.
+
+KPIs
+
+Player Ratios & Scores
+Squad Ratios & Scores
+
+V5 Definitions
+
+Set Pieces
+
+The Definition Endpoints provide complete metadata for all KPIs, Ratios & Scores, and Player Profiles used in the
+IMPECT ecosystem.
+
+Models
+
+Each definition contains a name, a human-readable label, a description, and for certain KPIs and scores we also
+provide the calculation logic.
+
+API
+
+▸
+
+home
+star_border
+extension
+manage_search
+percent
+percent
+flag
+insert_chart_outlined
+api
+
+Child Key
+
+/kpis
+
+https://api.impect.com/v5/customerapi/kpis?language=en
+This endpoint provides full metadata for all KPIs, including a clear definition, its meaning, and the hierarchical
+structure to related parent KPIs and context variables. It enables transparent interpretation and ensures that KPI
+values can be understood and compared consistently across the platform.
+Standalone KPIs are always explained via the details key, which describes what the KPI measures and how it is
+calculated. Sub-KPIs, which are created from a combination of a Standalone KPI and a Context Variable, are
+defined through both components — the Parent KPI explains what is measured, while the Context explains under
+which tactical or spatial condition the measurement applies.
+Key
+id
+https://glossary.impect.com/api-design?tab=1
+
+Child Key
+
+Description
+The unique ID of the KPI.
+23/29
+
+7/14/26, 6:56 PM
+
+Impect - Glossary
+
+Key
+
+Description
+
+play_circle language apps person
+
+Cristian Hidalgo
+
+name
+
+The technical name of the KPI used in the API.
+
+Dashboard
+
+inverted
+
+Indicates whether a higher or lower value of a metric is desirable. "false" means that higher
+values are good.
+
+KPIs
+
+details
+
+Context Variables
+Granular KPIs
+parentKpi
+
+Player Ratios & Scores
+Squad Ratios & Scores
+Set Pieces
+
+context
+
+Models
+API
+
+▸
+
+home
+star_border
+extension
+manage_search
+percent
+percent
+flag
+insert_chart_outlined
+api
+
+Child Key
+
+label
+
+The display label of the KPI shown in portals and glossary.
+
+definition
+
+The formal definition describing how the KPI is calculated or derived.
+
+meaning
+
+A textual explanation of what the KPI represents in a football context.
+
+description
+
+Additional notes or clarifications for UI usage and interpretations.
+
+id
+
+The ID of the parent KPI, if the current KPI is part of a hierarchy.
+
+label
+
+The label of the parent KPI.
+
+name
+
+The technical name of the parent KPI.
+
+definition
+
+The definition of the parent KPI.
+
+meaning
+
+The conceptual purpose or interpretation of the parent KPI.
+
+label
+
+The label of the context variable (e.g. "IN_POSSESSION").
+
+name
+
+The technical name of the context variable.
+
+definition
+
+The definition of the context variable.
+
+meaning
+
+A textual description of what the context variable represents.
+
+/kpis/event
+
+https://api.impect.com/v5/customerapi/kpis/event?language=en
+This endpoint provides detailed metadata for all KPIs that are available on event level.
+It works exactly like the general KPI Definition endpoint, however this one returns only those KPIs that can be
+retrieved directly on event-level.
+
+https://glossary.impect.com/api-design?tab=1
+
+24/29
+
+7/14/26, 6:56 PM
+
+Impect - Glossary
+
+Key
+
+Dashboard
+
+Cristian Hidalgo
+
+name
+
+The technical name of the KPI used in the API.
+
+inverted
+
+Indicates whether a higher or lower value of a metric is desirable. "false" means that higher
+values are good.
+
+details
+
+Granular KPIs
+
+parentKpi
+
+Squad Ratios & Scores
+Set Pieces
+Models
+context
+
+API
+
+play_circle language apps person
+
+The unique ID of the KPI.
+
+Context Variables
+
+Player Ratios & Scores
+
+Description
+
+id
+
+KPIs
+
+▸
+
+home
+star_border
+extension
+manage_search
+percent
+percent
+flag
+insert_chart_outlined
+api
+
+Child Key
+
+label
+
+The display label of the KPI shown in portals and glossary.
+
+definition
+
+The formal definition describing how the KPI is calculated or derived.
+
+meaning
+
+A textual explanation of what the KPI represents in a football context.
+
+description
+
+Additional notes or clarifications for UI usage and interpretations.
+
+id
+
+The ID of the parent KPI, if the current KPI is part of a hierarchy.
+
+label
+
+The label of the parent KPI.
+
+name
+
+The technical name of the parent KPI.
+
+definition
+
+The definition of the parent KPI.
+
+meaning
+
+The conceptual purpose or interpretation of the parent KPI.
+
+label
+
+The label of the context variable (e.g. "IN_POSSESSION").
+
+name
+
+The technical name of the context variable.
+
+definition
+
+The definition of the context variable.
+
+meaning
+
+A textual description of what the context variable represents.
+
+/player-profiles
+
+https://api.impect.com/v5/customerapi/player-profiles?language=en
+This endpoint provides detailed data for all player profiles, including the underlying KPIs (factors), the
+assigned weights, and the relevant positions for which the profile is valid.
+
+https://glossary.impect.com/api-design?tab=1
+
+25/29
+
+7/14/26, 6:56 PM
+
+Impect - Glossary
+
+play_circle language apps person
+
+When profiles are adjusted in the IMPECT Scouting Portal, these changes are applied immediately to all player
+Cristian Hidalgo
+profile score definitions and scores.
+Child
+Key
+
+name
+
+KPIs
+
+factors
+
+Context Variables
+Granular KPIs
+Player Ratios & Scores
+Squad Ratios & Scores
+
+positions
+
+Description
+The name of the player profile (e.g. "AERIALLY_DOMINANT_CB", "ANCHORMAN").
+
+name
+
+The technical name of the KPI or factor used in the player profile (e.g.
+"BYPASSED_OPPONENTS", "LOW_PASS_SCORE").
+
+type
+
+The type of the factor, typically "KPI" or "SCORE", referring to a metric used in the profile
+calculation.
+
+weight
+
+The relative importance (weight) assigned to this factor when calculating the profile score.
+
+inverted
+
+Indicates whether a higher or lower value of a metric is desirable. "false" means that higher
+values are good.
+
+name
+
+The position name associated with this player profile (e.g. "LEFT_WINGER"). A profile can be
+linked to one or multiple positions.
+
+Set Pieces
+Models
+
+▸
+
+home
+star_border
+extension
+manage_search
+percent
+percent
+flag
+insert_chart_outlined
+api
+
+Key
+
+Dashboard
+
+API
+
+/player-scores
+
+https://api.impect.com/v5/customerapi/player-scores?language=en
+This endpoint provides detailed metadata for all player score definitions, including their technical name,
+display label, definition, and interpretation.
+Player scores represent composite performance indicators derived from multiple KPIs.
+Key
+
+Description
+
+id
+
+The unique ID of the player score.
+
+name
+
+The technical name of the player score used within the system and API.
+
+inverted
+
+Indicates whether a higher or lower value of a metric is desirable. "false" means that higher
+values are good.
+
+details
+https://glossary.impect.com/api-design?tab=1
+
+Child Key
+
+label
+
+The display label of the player score shown in portals or reports.
+26/29
+
+7/14/26, 6:56 PM
+
+Impect - Glossary
+
+Key
+
+Dashboard
+
+Description
+
+definition
+
+The formal definition explaining how the player score is calculated from KPIs.
+
+meaning
+
+A textual description providing context and interpretation of what this score represents.
+
+Cristian Hidalgo
+
+KPIs
+Context Variables
+
+▸ /squad-scores
+
+Granular KPIs
+
+V5 Squad Ratings & Predictions
+
+Player Ratios & Scores
+
+The Squad Ratings & Predictions endpoints provide model-based evaluations of squad strength and match
+outcome probabilities.
+
+Squad Ratios & Scores
+
+They include squad rating time series (IMPECT League Ranking), the model coefficients used to estimate team
+performance, and match predictions with projected expected goals from multiple prediction models.
+
+Set Pieces
+
+▸
+
+home
+star_border
+extension
+manage_search
+percent
+percent
+flag
+insert_chart_outlined
+api
+
+play_circle language apps person
+
+Child Key
+
+Models
+API
+
+/squad-ratings
+
+https://api.impect.com/v5/customerapi/iterations/{iterationId}/squads/ratings
+This endpoint provides the Squad Ratings for a given iteration. The ratings are grouped by date and contain a
+numerical value for each squad of the iteration, allowing time-based tracking of team performance and form
+throughout the season. All ratings are available from July 2019.
+Key
+
+Child Key
+
+iterationId
+squadRatingsEntries
+
+https://glossary.impect.com/api-design?tab=1
+
+Description
+The unique ID of the iteration (season of a competition) for which squad
+ratings are provided.
+
+date
+
+The date of the rating entry (e.g. "2025-10-15").
+
+squadRatings
+
+Contains the list of ratings for all squads on the specified date, including:
+value – The numerical squad rating for the given date.
+squadId – The unique ID of the squad the rating belongs to.
+
+27/29
+
+Impect - Glossary
+
+▸
+
+7/14/26, 6:56 PM
+
+KPIs
+Context Variables
+
+Cristian Hidalgo
+
+https://api.impect.com/v5/customerapi/iterations/{iterationId}/predictions/modelcoefficients
+This endpoint provides raw prediction model coefficients. These can be used to calculate match predictions,
+which in turn can be used to simulate end-of-season results. All coefficients are provided for a given iteration (the
+input parameter), returning a time-series of coefficients for all squads in that iteration.
+Key
+
+Granular KPIs
+
+Child Key
+
+iterationId
+
+Player Ratios & Scores
+
+entries
+
+Squad Ratios & Scores
+
+Description
+The unique ID of the iteration (season of a competition) for which prediction model
+coefficients are provided.
+
+date
+
+The date for which the coefficients are provided.
+
+squads
+
+Contains the squad-level coefficients for a given date, including:
+id – The squad ID.
+att – The attack coefficient (offensive strength).
+def – The defense coefficient (defensive strength).
+
+competition
+
+Contains the competition-level coefficients for a given date, including:
+id – The competition ID.
+intercept – The constant.
+home – The home advantage coefficient.
+comp – The competition fixed effect coefficient.
+
+Set Pieces
+Models
+API
+
+▸
+
+home
+star_border
+extension
+manage_search
+percent
+percent
+flag
+insert_chart_outlined
+api
+
+Dashboard
+
+play_circle language apps person
+
+/model-coefficients
+
+/match-predictions
+
+https://api.impect.com/v5/customerapi/iterations/{iterationId}/predictions/matchpredictions
+This endpoint provides match predictions for a given iteration. Each entry contains predicted expected goals for
+a match from up to three prediction sources: market-implied, model, and expert model. Not all prediction types are
+available for every match — fields may be null if a prediction source does not cover the match.
+
+https://glossary.impect.com/api-design?tab=1
+
+28/29
+
+7/14/26, 6:56 PM
+
+home
+star_border
+extension
+manage_search
+percent
+percent
+flag
+insert_chart_outlined
+api
+
+Dashboard
+KPIs
+Context Variables
+Granular KPIs
+Player Ratios & Scores
+Squad Ratios & Scores
+Set Pieces
+Models
+
+Impect - Glossary
+
+play_circle language apps person
+
+Key
+
+Description
+
+iterationId
+
+The unique ID of the iteration (season of a competition) for which match predictions are provided.
+
+matchId
+
+The unique ID of the match.
+
+predMarketHome
+
+Market-implied expected goals for the home team. Derived from prediction market odds.
+
+predMarketAway
+
+Market-implied expected goals for the away team. Derived from prediction market odds.
+
+predModelHome
+
+Model predicted expected goals for the home team. Based on squad model coefficients.
+
+predModelAway
+
+Model predicted expected goals for the away team. Based on squad model coefficients.
+
+predExpertHome
+
+Expert model predicted expected goals for the home team. Only available when model predictions
+are also present.
+
+predExpertAway
+
+Expert model predicted expected goals for the away team. Only available when model predictions
+are also present.
+
+Cristian Hidalgo
+
+V5 Update Feed
+The Update Feed endpoints provide continuous change tracking for data updates within the IMPECT database
+
+API
+
+https://glossary.impect.com/api-design?tab=1
+
+29/29
+
+

@@ -1,0 +1,3388 @@
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+Home
+
+API
+
+Sheets
+
+Account
+
+Response Headers
+
+Odds API Documentation V4
+
+Usage Quota Costs
+
+GET historical odds
+Endpoint
+Parameters
+Schema
+
+Overview
+
+Example Request
+Example Response
+Response Headers
+
+Get started with The Odds API in 3 steps
+
+Usage Quota Costs
+More info
+
+GET historical events
+Endpoint
+
+Step 1
+Get an API key via email
+
+See plans
+
+Parameters
+Schema
+Example Request
+Example Response
+Response Headers
+
+Step 2
+
+Usage Quota Costs
+
+GET /v4/sports?apiKey=YOUR_API_KEY
+
+GET historical event odds
+
+Parameters
+Schema
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+json
+
+{
+
+Endpoint
+
+"key": "americanfootball_nfl",
+
+Get a list of in-season sports
+
+"group": "American Football",
+"title": "NFL",
+
+Details
+
+"description": "US Football",
+"active": true,
+"has_outrights": false
+
+1/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+},
+
+Home
+
+...
+
+API
+
+Sheets
+
+Account
+
+Response Headers
+Usage Quota Costs
+
+GET historical odds
+Endpoint
+Parameters
+
+Step 3
+
+Schema
+
+GET /v4/sports/americanfootball_nfl/odds?
+
+Example Request
+
+regions=us&oddsFormat=american&apiKey=YOUR_API_K
+EY
+
+Example Response
+Response Headers
+
+json
+
+{
+
+Usage Quota Costs
+
+"id": "bda33adca828c09dc3cac3a856aef176",
+
+More info
+
+"commence_time": "2021-09-10T00:20:00Z",
+
+GET historical events
+Endpoint
+Parameters
+
+"sport_key": "americanfootball_nfl",
+
+Use the sport key from step 2 to get a list
+of upcoming events and odds from
+different bookmakers
+
+Schema
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+
+"home_team": "Tampa Bay Buccaneers",
+"away_team": "Dallas Cowboys",
+"bookmakers": [
+{
+"key": "fanduel",
+"title": "FanDuel",
+"last_update": "2021-06-10T10:46:09Z",
+
+Use the oddsFormat parameter to show
+odds in either decimal or American format
+
+"markets": [
+{
+"key": "h2h",
+"outcomes": [
+
+Details
+
+{
+"name": "Dallas Cowboys",
+
+GET historical event odds
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+"price": 240
+},
+{
+"name": "Tampa Bay Buccaneers",
+"price": -303
+}
+
+2/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+]
+...
+
+Home
+
+API
+
+Sheets
+
+Account
+
+Response Headers
+Usage Quota Costs
+
+GET historical odds
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+Response Headers
+
+Host
+All requests use the host https://api.the-odds-api.com
+Connections that require IPv6 can use https://ipv6-api.the-odds-api.com
+
+Usage Quota Costs
+More info
+
+GET historical events
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+
+GET sports
+Returns a list of in-season sport objects. The sport key can be used as the sport parameter
+in other endpoints. This endpoint does not count against the usage quota.
+
+Endpoint
+
+Response Headers
+Usage Quota Costs
+
+GET /v4/sports/?apiKey={apiKey}
+
+GET historical event odds
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+Parameters
+apiKey The API key associated with your subscription. See usage plans
+3/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+all Optional - if this parameter is set to true ( all=true ), a list of both in and out of season
+sports will be returned
+
+Home
+
+API
+
+Sheets
+
+Account
+
+Response Headers
+Usage Quota Costs
+
+GET historical odds
+
+Try it out in the browser
+
+Endpoint
+
+https://api.the-odds-api.com/v4/sports/?apiKey=YOUR_API_KEY
+
+Parameters
+Schema
+
+Viewing JSON in the browser is easier with a prettifier such as JSON Viewer
+
+for Chrome
+
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+More info
+
+GET historical events
+Endpoint
+
+Schema
+For a detailed API spec, see the Swagger API docs
+
+Example Request
+
+Parameters
+Schema
+
+GET https://api.the-odds-api.com/v4/sports/?apiKey=YOUR_API_KEY
+
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+
+GET historical event odds
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+Example Response
+json
+
+[
+{
+"key": "americanfootball_ncaaf",
+"group": "American Football",
+"title": "NCAAF",
+"description": "US College Football",
+
+4/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+"active": true,
+"has_outrights": false
+
+Response Headers
+Usage Quota Costs
+
+Home
+
+API
+
+Sheets
+
+Account
+
+},
+{
+"key": "americanfootball_nfl",
+
+GET historical odds
+
+"group": "American Football",
+
+Endpoint
+
+"title": "NFL",
+
+Parameters
+
+"description": "US Football",
+"active": true,
+
+Schema
+
+"has_outrights": false
+
+Example Request
+
+},
+
+Example Response
+
+{
+
+Response Headers
+Usage Quota Costs
+More info
+
+GET historical events
+Endpoint
+Parameters
+Schema
+Example Request
+
+Response Headers
+Calls to the /sports endpoint will not affect the quota usage. The following response headers
+are returned:
+
+x-requests-remaining The usage credits remaining until the quota resets
+x-requests-used The usage credits used since the last quota reset
+x-requests-last The usage cost of the last API call
+
+Example Response
+Response Headers
+Usage Quota Costs
+
+GET historical event odds
+
+Usage Quota Costs
+This endpoint does not count against the usage quota.
+
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+GET odds
+5/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+Returns a list of upcoming and live games with recent odds for a given sport, region and
+market
+
+Home
+
+API
+
+Sheets
+
+Account
+
+Response Headers
+Usage Quota Costs
+
+GET historical odds
+
+Endpoint
+
+Endpoint
+Parameters
+
+GET /v4/sports/{sport}/odds/?apiKey={apiKey}&regions={regions}&markets={markets}
+
+Schema
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+More info
+
+GET historical events
+Endpoint
+Parameters
+Schema
+Example Request
+
+Parameters
+sport The sport key obtained from calling the /sports endpoint. upcoming is always valid,
+returning any live games as well as the next 8 upcoming games across all sports
+
+apiKey The API key associated with your subscription. See usage plans
+regions Determines the bookmakers to be returned. For example, us , us2 (United
+States), uk (United Kingdom), au (Australia) and eu (Europe). Multiple regions can be
+specified if comma delimited. See the list of bookmakers by region.
+
+Example Response
+
+markets Optional - Determines which odds market is returned. Defaults to h2h (head to
+
+Response Headers
+
+head / moneyline). Valid markets are h2h (moneyline), spreads (points handicaps),
+
+Usage Quota Costs
+
+totals (over/under) and outrights (futures). Multiple markets can be specified if
+
+GET historical event odds
+Endpoint
+Parameters
+
+comma delimited. spreads and totals markets are mainly available for US sports and
+bookmakers at this time. Each specified market costs 1 against the usage quota, for each
+region.
+
+Schema
+
+Lay odds are automatically included with h2h results for relevant betting exchanges
+
+Example Request
+
+(Betfair, Matchbook etc). These have a h2h_lay market key.
+
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+6/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+For sports with outright markets (such as Golf), the market will default to outrights if not
+Home
+
+API
+
+Sheets
+
+specified. Lay odds for outrights ( outrights_lay ) will automatically be available for
+Response Headers
+Usage Quota Costs
+
+GET historical odds
+
+Account
+
+relevant exchanges.
+For more info, see descriptions of betting markets.
+
+Endpoint
+
+dateFormat Optional - Determines the format of timestamps in the response. Valid values
+
+Parameters
+
+are unix and iso (ISO 8601). Defaults to iso .
+
+Schema
+Example Request
+Example Response
+Response Headers
+
+oddsFormat Optional - Determines the format of odds in the response. Valid values are
+decimal and american . Defaults to decimal . When set to american , small
+
+discrepancies might exist for some bookmakers due to rounding errors.
+
+Usage Quota Costs
+
+eventIds Optional - Comma-separated game ids. Filters the response to only return games
+
+More info
+
+with the specified ids.
+
+GET historical events
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+
+GET historical event odds
+
+bookmakers Optional - Comma-separated list of bookmakers to be returned. If both
+bookmakers and regions are both specified, bookmakers takes priority. Bookmakers can
+
+be from any region. Every group of 10 bookmakers is the equivalent of 1 region. For
+example, specifying up to 10 bookmakers counts as 1 region. Specifying between 11 and 20
+bookmakers counts as 2 regions.
+
+commenceTimeFrom Optional - filter the response to show games that commence on and
+after this parameter. Values are in ISO 8601 format, for example 2023-09-09T00:00:00Z. This
+parameter has no effect if the sport is set to 'upcoming'.
+
+Endpoint
+
+commenceTimeTo Optional - filter the response to show games that commence on and
+
+Parameters
+
+before this parameter. Values are in ISO 8601 format, for example 2023-09-10T23:59:59Z.
+
+Schema
+
+This parameter has no effect if the sport is set to 'upcoming'.
+
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+7/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+includeLinks Optional - if true , the response will include bookmaker links to events,
+Home
+
+markets, and betslips if available. Valid values are true or false
+Response Headers
+Usage Quota Costs
+
+GET historical odds
+Endpoint
+
+API
+
+Sheets
+
+Account
+
+includeSids Optional - if true , the response will include source ids (bookmaker ids) for
+events, markets and outcomes if available. Valid values are true or false . This field can
+be useful to construct your own links to handle variations in state or mobile app links.
+
+Parameters
+
+includeBetLimits Optional - if true , the response will include the bet limit of each betting
+
+Schema
+
+option, mainly available for betting exchanges. Valid values are true or false
+
+Example Request
+Example Response
+Response Headers
+
+includeRotationNumbers Optional - if true , the response will include the home and away
+rotation numbers if available. See this link for details. Valid values are true or false .
+
+Usage Quota Costs
+More info
+
+GET historical events
+Endpoint
+Parameters
+
+Try it out in the browser
+https://api.the-odds-api.com/v4/sports/upcoming/odds/?regions=...
+Viewing JSON in the browser is easier with a prettifier such as JSON Viewer
+
+for Chrome
+
+Schema
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+
+GET historical event odds
+Endpoint
+
+Schema
+For a detailed API spec, see the Swagger API docs
+
+Example Request
+
+Parameters
+Schema
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+GET https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds/?
+8/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+apiKey=YOUR_API_KEY&regions=us&markets=h2h,spreads&oddsFormat=american
+Home
+
+API
+
+Sheets
+
+Account
+
+Response Headers
+Usage Quota Costs
+
+GET historical odds
+Endpoint
+Parameters
+Schema
+
+Example Response
+json
+
+[
+{
+"id": "bda33adca828c09dc3cac3a856aef176",
+
+Example Request
+
+"sport_key": "americanfootball_nfl",
+
+Example Response
+
+"commence_time": "2021-09-10T00:20:00Z",
+
+Response Headers
+Usage Quota Costs
+More info
+
+GET historical events
+Endpoint
+Parameters
+Schema
+
+"home_team": "Tampa Bay Buccaneers",
+"away_team": "Dallas Cowboys",
+"bookmakers": [
+{
+"key": "unibet",
+"title": "Unibet",
+"last_update": "2021-06-10T13:33:18Z",
+"markets": [
+{
+"key": "h2h",
+
+Example Request
+
+"outcomes": [
+
+Example Response
+
+{
+
+Response Headers
+
+"name": "Dallas Cowboys",
+
+Usage Quota Costs
+
+GET historical event odds
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+"price": 240
+
+Response Headers
+The following response headers are returned
+
+x-requests-remaining The usage credits remaining until the quota resets
+9/42
+
+7/24/26, 12:12 PM
+
+Response Headers
+Usage Quota Costs
+
+GET historical odds
+Endpoint
+
+Odds API Documentation V4 | The Odds API
+
+x-requests-used The usage credits used since the last quota reset
+Home
+x-requests-last The usage cost of the last API call
+
+API
+
+Sheets
+
+Account
+
+Usage Quota Costs
+The usage quota cost is 1 per region per market.
+
+Parameters
+Schema
+
+cost = [number of markets specified] x [number of regions specified]
+
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+More info
+
+GET historical events
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+
+Examples
+1 market, 1 region
+Cost: 1
+Example /v4/sports/americanfootball_nfl/odds?markets=h2h&regions=us&...
+
+3 markets, 1 region
+Cost: 3
+Example /v4/sports/americanfootball_nfl/odds?
+markets=h2h,spreads,totals&regions=us&...
+
+Response Headers
+Usage Quota Costs
+
+GET historical event odds
+Endpoint
+
+1 market, 3 regions
+Cost: 3
+Example /v4/sports/soccer_epl/odds?markets=h2h&regions=us,uk,eu&...
+
+Parameters
+
+3 markets, 3 regions
+
+Schema
+
+Cost: 9
+
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+10/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+Example: /v4/sports/basketball_nba/odds?
+markets=h2h,spreads,totals&regions=us,uk,au&...
+
+Home
+
+API
+
+Sheets
+
+Account
+
+Response Headers
+Usage Quota Costs
+
+GET historical odds
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+Response Headers
+
+Keeping track of quota usage
+To keep track of usage credits, every API call includes the following response headers:
+
+x-requests-remaining The usage credits remaining until the quota resets
+x-requests-used The usage credits used since the last quota reset
+x-requests-last The usage cost of the last API call
+
+Usage Quota Costs
+More info
+
+GET historical events
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+
+GET historical event odds
+Endpoint
+
+More info
+The list of events returned in the /odds endpoint mirrors events that are listed by major
+bookmakers. This usually includes games for the current round
+Events may temporarily become unavailable after a round, before bookmakers begin listing
+the next round of games
+Events may be unavailable if the sport is not in season. For popular sports, bookmakers
+may begin listing new season events a few months in advance
+If no events are returned, the request will not count against the usage quota
+To determine if an event is in-play, the commence_time can be used. If commence_time is
+less than the current time, the event is in-play. The /odds endpoint does not return
+completed events
+
+Parameters
+Schema
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+11/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+Home
+
+Response Headers
+Usage Quota Costs
+
+GET historical odds
+
+API
+
+Sheets
+
+Account
+
+GET scores
+
+Endpoint
+
+Returns a list of upcoming, live and recently completed games for a given sport. Live and
+
+Parameters
+
+recently completed games contain scores. Games from up to 3 days ago can be returned using
+
+Schema
+
+the daysFrom parameter. Live scores update approximately every 30 seconds.
+
+Example Request
+Example Response
+
+The scores endpoint applies to selected sports and is gradually being expanded to
+
+Response Headers
+
+more sports. See the current list of covered sports and leagues.
+
+Usage Quota Costs
+More info
+
+GET historical events
+
+Endpoint
+
+Endpoint
+Parameters
+
+GET /v4/sports/{sport}/scores/?apiKey={apiKey}&daysFrom={daysFrom}&dateFormat=
+
+Schema
+
+{dateFormat}
+
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+
+GET historical event odds
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+Parameters
+sport The sport key obtained from calling the /sports endpoint.
+apiKey The API key associated with your subscription. See usage plans
+daysFrom Optional - The number of days in the past from which to return completed
+games. Valid values are integers from 1 to 3 . If this parameter is missing, only live and
+upcoming games are returned.
+12/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+dateFormat Optional - Determines the format of timestamps in the response. Valid values
+are unix and iso (ISO 8601). Defaults to iso .
+Response Headers
+Usage Quota Costs
+
+GET historical odds
+
+Home
+
+API
+
+Sheets
+
+Account
+
+eventIds Optional - Comma-separated game ids. Filters the response to only return games
+for the specified game ids.
+
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+Response Headers
+
+Schema
+For the detailed API spec, see the Swagger API docs
+
+Example Request
+
+Usage Quota Costs
+More info
+
+GET historical events
+
+GET https://api.the-odds-api.com/v4/sports/basketball_nba/scores/?
+daysFrom=1&apiKey=YOUR_API_KEY
+
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+
+GET historical event odds
+Endpoint
+Parameters
+
+Example Response
+json
+
+[
+{
+"id": "572d984e132eddaac3da93e5db332e7e",
+"sport_key": "basketball_nba",
+"sport_title": "NBA",
+"commence_time": "2022-02-06T03:10:38Z",
+"completed": true,
+
+Schema
+
+"home_team": "Sacramento Kings",
+
+Example Request
+
+"away_team": "Oklahoma City Thunder",
+
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+"scores": [
+13/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+{
+"name": "Sacramento Kings",
+
+Home
+
+API
+
+Sheets
+
+Account
+
+"score": "113"
+
+Response Headers
+
+},
+
+Usage Quota Costs
+
+{
+
+GET historical odds
+
+"name": "Oklahoma City Thunder",
+"score": "103"
+
+Endpoint
+}
+
+Parameters
+
+]
+
+Schema
+Example Request
+Example Response
+Response Headers
+
+Tip
+
+Usage Quota Costs
+
+The game id field in the scores response matches the game id field in the odds
+
+More info
+
+response
+
+GET historical events
+Endpoint
+Parameters
+
+Response Headers
+
+Schema
+
+The following response headers are returned
+
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+
+GET historical event odds
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+x-requests-remaining The usage credits remaining until the quota resets
+x-requests-used The usage credits used since the last quota reset
+x-requests-last The usage cost of the last API call
+
+Usage Quota Costs
+The usage quota cost is 2 if the daysFrom parameter is specified (returning completed
+events), otherwise the usage quota cost is 1.
+
+14/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+Examples
+Response Headers
+Usage Quota Costs
+
+GET historical odds
+Endpoint
+Parameters
+Schema
+
+Home
+
+API
+
+Sheets
+
+Account
+
+Return live and upcoming games, and games completed within the last 3 days
+Only live and completed games will have scores
+Cost: 2
+Example /v4/sports/americanfootball_nfl/scores?daysFrom=3&apiKey=...
+
+Return live and upcoming games
+
+Example Request
+
+Only live games will have scores
+
+Example Response
+
+Cost: 1
+
+Response Headers
+
+Example /v4/sports/americanfootball_nfl/scores?apiKey=...
+
+Usage Quota Costs
+More info
+
+GET historical events
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+Response Headers
+
+Keeping track of quota usage
+To keep track of usage credits, every API call includes the following response headers:
+
+x-requests-remaining The usage credits remaining until the quota resets
+x-requests-used The usage credits used since the last quota reset
+x-requests-last The usage cost of the last API call
+
+Usage Quota Costs
+
+GET historical event odds
+Endpoint
+Parameters
+Schema
+
+GET events
+
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+15/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+Returns a list of in-play and pre-match events for a specified sport or league. The response
+Home
+
+API
+
+Sheets
+
+Account
+
+includes event id, home and away teams, and the commence time for each event. Odds are
+Response Headers
+
+not included in the response. This endpoint does not count against the usage quota.
+
+Usage Quota Costs
+
+GET historical odds
+Endpoint
+
+Endpoint
+
+Parameters
+Schema
+
+GET /v4/sports/{sport}/events?apiKey={apiKey}
+
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+More info
+
+GET historical events
+Endpoint
+Parameters
+Schema
+
+Parameters
+sport The sport key obtained from calling the /sports endpoint
+apiKey The API key associated with your subscription. See usage plans
+dateFormat Optional - Determines the format of timestamps in the response. Valid values
+are unix and iso (ISO 8601). Defaults to iso .
+
+Example Request
+
+eventIds Optional - Comma-separated game ids. Filters the response to only return games
+
+Example Response
+
+with the specified ids.
+
+Response Headers
+Usage Quota Costs
+
+GET historical event odds
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+commenceTimeFrom Optional - filter the response to show games that commence on and
+after this parameter. Values are in ISO 8601 format, for example 2023-09-09T00:00:00Z. This
+parameter has no effect if the sport is set to 'upcoming'.
+
+commenceTimeTo Optional - filter the response to show games that commence on and
+before this parameter. Values are in ISO 8601 format, for example 2023-09-10T23:59:59Z.
+This parameter has no effect if the sport is set to 'upcoming'.
+16/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+includeRotationNumbers Optional - if true , the response will include the home and away
+Home
+
+API
+
+Sheets
+
+Account
+
+rotation numbers if available. See this link for details. Valid values are true or false .
+Response Headers
+Usage Quota Costs
+
+GET historical odds
+Endpoint
+
+Schema
+For the detailed API spec, see the Swagger API docs
+
+Parameters
+Schema
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+
+Example Request
+GET https://api.the-odds-api.com/v4/sports/americanfootball_nfl/events?
+apiKey=YOUR_API_KEY
+
+More info
+
+GET historical events
+Endpoint
+
+Example Response
+
+Parameters
+Schema
+Example Request
+
+json
+
+[
+{
+"id": "a512a48a58c4329048174217b2cc7ce0",
+
+Example Response
+
+"sport_key": "americanfootball_nfl",
+
+Response Headers
+
+"sport_title": "NFL",
+
+Usage Quota Costs
+
+"commence_time": "2023-01-01T18:00:00Z",
+"home_team": "Atlanta Falcons",
+
+GET historical event odds
+Endpoint
+Parameters
+
+"away_team": "Arizona Cardinals"
+},
+{
+
+Schema
+
+"id": "0ba747b1414a31b05ef37f0bf3d7fbe9",
+
+Example Request
+
+"sport_key": "americanfootball_nfl",
+
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+"sport_title": "NFL",
+17/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+"commence_time": "2023-01-01T18:00:00Z",
+"home_team": "Tampa Bay Buccaneers",
+
+Response Headers
+Usage Quota Costs
+
+GET historical odds
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+
+Home
+
+API
+
+Sheets
+
+Account
+
+"away_team": "Carolina Panthers"
+},
+{
+"id" "d7120d8231032db343 b86b20 f
+
+f48"
+
+Response Headers
+The following response headers are returned
+
+x-requests-remaining The usage credits remaining until the quota resets
+x-requests-used The usage credits used since the last quota reset
+x-requests-last The usage cost of the last API call
+
+More info
+
+GET historical events
+Endpoint
+Parameters
+
+Usage Quota Costs
+This endpoint does not count against the usage quota.
+
+Schema
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+
+GET historical event odds
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+GET event odds
+Returns odds for a single event. Accepts any available betting markets using the markets
+parameter. Coverage of non-featured markets is currently limited to selected bookmakers and
+sports, and expanding over time.
+
+When to use this endpoint: Use this endpoint to access odds for any supported market. Since
+the volume of data returned can be large, these requests will only query one event at a time. If
+you are only interested in the most popular betting markets, including head-to-head
+18/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+(moneyline), point spreads (handicap), over/under (totals), the main /odds endpoint is simpler
+to integrate and more cost-effective.
+
+Home
+
+API
+
+Sheets
+
+Account
+
+Response Headers
+Usage Quota Costs
+
+GET historical odds
+
+Endpoint
+
+Endpoint
+Parameters
+
+GET /v4/sports/{sport}/events/{eventId}/odds?apiKey={apiKey}&regions=
+
+Schema
+
+{regions}&markets={markets}&dateFormat={dateFormat}&oddsFormat={oddsFormat}
+
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+More info
+
+GET historical events
+
+Parameters
+Parameters are the same as for the /odds endpoint with exceptions listed below. All available
+market keys are accepted in the markets parameter.
+
+Endpoint
+
+eventId The ID of an upcoming or live game, to be used in the URL path. Event ids can be
+
+Parameters
+
+found in the "id" field in the response of the events endpoint.
+
+Schema
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+
+GET historical event odds
+Endpoint
+
+includeMultipliers Optional. Applicable to US DFS sites. If true , the response will include
+the multipliers in each bet selection outcome if available. Valid values are true or false .
+Defaults to false .
+
+Schema
+For the detailed API spec, see the Swagger API docs
+
+Parameters
+Schema
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+Example Request
+19/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+GET https://api.the-odds-
+
+Home
+
+API
+
+Sheets
+
+Account
+
+Response Headers
+
+api.com/v4/sports/americanfootball_nfl/events/a512a48a58c4329048174217b2cc7ce0/odds?
+
+Usage Quota Costs
+
+apiKey=YOUR_API_KEY&regions=us&markets=player_pass_tds&oddsFormat=american
+
+GET historical odds
+Endpoint
+Parameters
+Schema
+
+Example Response
+
+Example Request
+
+The response schema is almost the same as that of the /odds endpoint with a few differces:
+
+Example Response
+Response Headers
+Usage Quota Costs
+More info
+
+GET historical events
+Endpoint
+Parameters
+Schema
+
+A single game is returned, determined by the eventId parameter.
+The last_update field is only available on the market level in the response and not on the
+bookmaker level. This reflects the fact that markets can update on their own schedule.
+Relevant markets will have a description field in their outcomes.
+json
+
+{
+"id": "a512a48a58c4329048174217b2cc7ce0",
+"sport_key": "americanfootball_nfl",
+
+Example Request
+
+"sport_title": "NFL",
+
+Example Response
+
+"commence_time": "2023-01-01T18:00:00Z",
+
+Response Headers
+Usage Quota Costs
+
+GET historical event odds
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+"home_team": "Atlanta Falcons",
+"away_team": "Arizona Cardinals",
+"bookmakers": [
+{
+"key": "draftkings",
+"title": "DraftKings",
+"markets": [
+{
+"key": "player_pass_tds",
+20/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+"last_update": "2023-01-01T05:31:29Z",
+"outcomes": [
+
+Endpoint
+
+Response Headers
+
+Parameters
+
+The following response headers are returned
+
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+More info
+
+GET historical events
+Endpoint
+Parameters
+Schema
+
+Sheets
+
+Account
+
+"name": "Over",
+
+Usage Quota Costs
+
+Schema
+
+API
+
+{
+
+Response Headers
+
+GET historical odds
+
+Home
+
+x-requests-remaining The usage credits remaining until the quota resets
+x-requests-used The usage credits used since the last quota reset
+x-requests-last The usage cost of the last API call
+
+Usage Quota Costs
+The usage quota cost depends on the number of markets and regions used in the request.
+
+cost = [number of unique markets returned] x [number of regions specified]
+
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+
+GET historical event odds
+
+Examples of usage quota costs
+1 market, 1 region
+Cost: 1
+
+Endpoint
+
+Example
+
+Parameters
+
+/v4/sports/americanfootball_nfl/events/a512a48a58c4329048174217b2cc7ce0/odds?
+
+Schema
+
+markets=h2h&regions=us&...
+
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+21/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+3 markets, 1 region
+Cost: 3
+
+Home
+
+API
+
+Sheets
+
+Response Headers
+
+Example
+
+Usage Quota Costs
+
+/v4/sports/americanfootball_nfl/events/a512a48a58c4329048174217b2cc7ce0/odds?
+
+GET historical odds
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+
+Account
+
+markets=h2h,spreads,totals&regions=us&...
+
+1 market, 3 regions
+Cost: 3
+Example /v4/sports/soccer_epl/events/037d7b6bb128546961e2a06680f63944/odds?
+markets=h2h&regions=us,uk,eu&...
+
+Response Headers
+
+3 markets, 3 regions
+
+Usage Quota Costs
+
+Cost: 9
+
+More info
+
+Example: /v4/sports/basketball_nba/events/0b83beff5f82f8623eea93dbc1d7cd4e/odds?
+
+GET historical events
+
+markets=h2h,spreads,totals&regions=us,uk,au&...
+
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+
+GET historical event odds
+Endpoint
+
+Keeping track of quota usage
+To keep track of usage credits, every API response includes the following response
+headers:
+
+x-requests-remaining The usage credits remaining until the quota resets
+x-requests-used The usage credits used since the last quota reset
+x-requests-last The usage cost of the last API call
+
+Parameters
+Schema
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+More info
+22/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+Responses with empty data do not count towards the usage quota.
+
+Home
+
+API
+
+Sheets
+
+Account
+
+When calculating the market component of usage quota costs, a count of unique markets in
+Response Headers
+
+the API response is used. For example if you specify 5 different markets and 1 region in the
+
+Usage Quota Costs
+
+API call, and data is only available for 2 markets, the cost will be [2 markets] x [1 region] = 2
+
+GET historical odds
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+More info
+
+GET historical events
+Endpoint
+Parameters
+
+GET event markets
+Returns available market keys for each bookmaker for a single event.
+This endpoint only returns recently seen market keys for each bookmaker - it is not a
+comprehensive list of all supported markets. As an event's commence time approaches, this
+endpoint will return more market keys as bookmakers open more markets.
+
+Endpoint
+
+Schema
+Example Request
+
+GET /v4/sports/{sport}/events/{eventId}/markets?apiKey={apiKey}&regions=
+
+Example Response
+
+{regions}&dateFormat={dateFormat}
+
+Response Headers
+Usage Quota Costs
+
+GET historical event odds
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+Parameters
+sport The sport key obtained from calling the sports endpoint.
+eventId The ID of an upcoming or live game. Event ids can be found in the "id" field in the
+response of the events endpoint.
+23/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+apiKey The API key associated with your subscription. See usage plans
+Home
+
+Response Headers
+Usage Quota Costs
+
+GET historical odds
+
+API
+
+Sheets
+
+Account
+
+regions Determines the bookmakers to be returned. For example, us , us2 (United
+States), uk (United Kingdom), au (Australia) and eu (Europe). Multiple regions can be
+specified if comma delimited. See the list of bookmakers by region.
+
+Endpoint
+
+bookmakers Optional - Comma-separated list of bookmakers to be returned. If both
+
+Parameters
+
+bookmakers and regions are both specified, bookmakers takes priority. Bookmakers can
+
+Schema
+
+be from any region. Every group of 10 bookmakers is the equivalent of 1 region. For
+
+Example Request
+
+example, specifying up to 10 bookmakers counts as 1 region. Specifying between 11 and 20
+
+Example Response
+
+bookmakers counts as 2 regions.
+
+Response Headers
+Usage Quota Costs
+More info
+
+GET historical events
+
+dateFormat Optional - Determines the format of timestamps in the response. Valid values
+are unix and iso (ISO 8601). Defaults to iso .
+
+Endpoint
+
+Schema
+
+Parameters
+
+For the detailed API spec, see the Swagger API docs
+
+Schema
+Example Request
+Example Response
+
+Example Request
+
+Response Headers
+Usage Quota Costs
+
+GET historical event odds
+Endpoint
+
+GET https://api.the-oddsapi.com/v4/sports/baseball_mlb/events/19699ba901294e39cb07fc4f19929a38/markets?
+apiKey=YOUR_API_KEY&regions=us
+
+Parameters
+Schema
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+Example Response
+24/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+Home
+
+{
+
+Response Headers
+Usage Quota Costs
+
+GET historical odds
+Endpoint
+Parameters
+Schema
+
+"commence_time": "2025-08-06T16:36:00Z",
+"home_team": "Philadelphia Phillies",
+"away_team": "Baltimore Orioles",
+"bookmakers": [
+{
+"title": "FanDuel",
+"markets": [
+{
+"key": "alternate_spreads",
+
+More info
+
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+
+GET historical event odds
+Endpoint
+
+Account
+
+"sport_title": "MLB",
+
+Example Response
+
+GET historical events
+
+json
+
+"sport_key": "baseball_mlb",
+
+"key": "fanduel",
+
+Usage Quota Costs
+
+Sheets
+
+"id": "19699ba901294e39cb07fc4f19929a38",
+
+Example Request
+
+Response Headers
+
+API
+
+"last_update": "2025-08-06T07:39:57Z"
+},
+{
+"key": "batter_doubles",
+"last update": "2025-08-06T07:39:57Z"
+
+Response Headers
+The following response headers are returned
+
+x-requests-remaining The usage credits remaining until the quota resets
+x-requests-used The usage credits used since the last quota reset
+x-requests-last The usage cost of the last API call
+
+Parameters
+Schema
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+Usage Quota Costs
+25/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+A call to this endpoint costs 1 usage credit.
+
+Home
+
+API
+
+Sheets
+
+Account
+
+Response Headers
+Usage Quota Costs
+
+GET historical odds
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+More info
+
+GET historical events
+Endpoint
+
+GET participants
+Returns list of participants for a given sport. Depending on the sport, a participant can be
+either a team or an individual. For example for NBA, a list of teams is returned. For tennis, a
+list of players is returned.
+This endpoint does not return players on a team.
+The returned list should be treated as a whitelist and may include participants that are not
+currently active.
+
+Endpoint
+
+Parameters
+Schema
+
+GET /v4/sports/{sport}/participants?apiKey={apiKey}
+
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+
+GET historical event odds
+Endpoint
+
+Parameters
+sport The sport key obtained from calling the /sports endpoint
+apiKey The API key associated with your subscription. See usage plans
+
+Parameters
+Schema
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+Schema
+26/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+For the detailed API spec, see the Swagger API docs
+Response Headers
+Usage Quota Costs
+
+Home
+
+API
+
+Sheets
+
+Account
+
+Example Request
+
+GET historical odds
+Endpoint
+
+GET https://api.the-odds-api.com/v4/sports/americanfootball_nfl/participants?
+
+Parameters
+
+apiKey=YOUR_API_KEY
+
+Schema
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+More info
+
+Example Response
+json
+
+[
+{
+"full_name": "Arizona Cardinals",
+
+GET historical events
+Endpoint
+Parameters
+
+"id": "par_01hqmkr1xsfxmrj5pdq0f23asx"
+},
+{
+
+Schema
+
+"full_name": "Atlanta Falcons",
+
+Example Request
+
+"id": "par_01hqmkr1xtexkbhkq7ct921rne"
+
+Example Response
+Response Headers
+
+},
+{
+"full_name": "Baltimore Ravens",
+
+Usage Quota Costs
+
+GET historical event odds
+Endpoint
+
+"id": "par_01hqmkr1xvev9rf557fy09k2cx"
+},
+{
+"full_name": "Buffalo Bills",
+
+Parameters
+
+"id": "par_01hqmkr1xwe6prjwr3j4gpqwx8"
+
+Schema
+
+},
+
+Example Request
+
+{
+
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+"full name": "Carolina Panthers"
+27/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+Home
+
+Response Headers
+Usage Quota Costs
+
+GET historical odds
+Endpoint
+Parameters
+Schema
+Example Request
+
+API
+
+Sheets
+
+Account
+
+Response Headers
+The following response headers are returned
+
+x-requests-remaining The usage credits remaining until the quota resets
+x-requests-used The usage credits used since the last quota reset
+x-requests-last The usage cost of the last API call
+
+Example Response
+Response Headers
+Usage Quota Costs
+More info
+
+GET historical events
+Endpoint
+Parameters
+
+Usage Quota Costs
+A call to this endpoint costs 1 usage credit.
+
+GET historical odds
+
+Schema
+
+Returns a snapshot of games with bookmaker odds for a given sport, region and market, at a
+
+Example Request
+
+given historical timestamp. Historical odds data is available from June 6th 2020, with
+
+Example Response
+
+snapshots taken at 10 minute intervals. From September 2022, historical odds snapshots are
+
+Response Headers
+
+available at 5 minute intervals. This endpoint is only available on paid usage plans.
+
+Usage Quota Costs
+
+GET historical event odds
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+Endpoint
+GET /v4/historical/sports/{sport}/odds?apiKey={apiKey}&regions={regions}&markets=
+{markets}&date={date}
+
+28/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+Home
+
+Response Headers
+Usage Quota Costs
+
+GET historical odds
+Endpoint
+Parameters
+Schema
+Example Request
+
+API
+
+Sheets
+
+Account
+
+Parameters
+Parameters are the same as for the /odds endpoint, with the addition of the date parameter.
+
+date The timestamp of the data snapshot to be returned, specified in ISO8601 format, for
+example 2021-10-18T12:00:00Z The historical odds API will return the closest snapshot
+equal to or earlier than the provided date parameter.
+
+Example Response
+Response Headers
+Usage Quota Costs
+More info
+
+GET historical events
+Endpoint
+
+Schema
+For a detailed API spec, see the Swagger API docs
+
+Example Request
+
+Parameters
+Schema
+Example Request
+Example Response
+
+GET https://api.the-odds-api.com/v4/historical/sports/americanfootball_nfl/odds/?
+apiKey=YOUR_API_KEY&regions=us&markets=h2h&oddsFormat=american&date=2021-1018T12:00:00Z
+
+Response Headers
+Usage Quota Costs
+
+GET historical event odds
+Endpoint
+Parameters
+Schema
+
+Example Response
+The response schema is the same as that of the /odds endpoint, but wrapped in a structure
+that contains information about the snapshot, including:
+
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+29/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+timestamp: The timestamp of the snapshot. This will be the closest available timestamp
+equal to or earlier than the provided date parameter.
+
+Home
+
+API
+
+Sheets
+
+Account
+
+Response Headers
+
+previous_timestamp: the preceding available timestamp. This can be used as the date
+
+Usage Quota Costs
+
+parameter in a new request to move back in time.
+
+GET historical odds
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+Response Headers
+
+next_timestamp: The next available timestamp. This can be used as the date parameter in
+a new request to move forward in time.
+More sample responses for selected sports
+json
+
+{
+"timestamp": "2021-10-18T11:55:00Z",
+"previous_timestamp": "2021-10-18T11:45:00Z",
+
+Usage Quota Costs
+
+"next_timestamp": "2021-10-18T12:05:00Z",
+
+More info
+
+"data": [
+
+GET historical events
+Endpoint
+
+{
+"id": "4edd5ce090a3ec6192053b10d27b87b0",
+"sport_key": "americanfootball_nfl",
+
+Parameters
+
+"sport_title": "NFL",
+
+Schema
+
+"commence_time": "2021-10-19T00:15:00Z",
+
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+
+GET historical event odds
+Endpoint
+
+"home_team": "Tennessee Titans",
+"away_team": "Buffalo Bills",
+"bookmakers": [
+{
+"key": "draftkings",
+"title": "DraftKings",
+"last_update": "2021-10-18T11:48:09Z",
+"markets": [
+
+Parameters
+
+{
+
+Schema
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+Response Headers
+30/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+The following response headers are returned
+Response Headers
+Usage Quota Costs
+
+GET historical odds
+
+Home
+
+API
+
+Sheets
+
+Account
+
+x-requests-remaining The usage credits remaining until the quota resets
+x-requests-used The usage credits used since the last quota reset
+x-requests-last The usage cost of the last API call
+
+Endpoint
+Parameters
+Schema
+Example Request
+
+Usage Quota Costs
+The usage quota cost for historical odds is 10 per region per market.
+
+Example Response
+Response Headers
+
+cost = 10 x [number of markets specified] x [number of regions specified]
+
+Usage Quota Costs
+More info
+
+GET historical events
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+
+Examples of usage quota costs for historical odds
+1 market, 1 region
+Cost: 10
+Example /v4/historical/sports/americanfootball_nfl/odds?
+markets=h2h&regions=us&...
+
+Response Headers
+
+3 markets, 1 region
+
+Usage Quota Costs
+
+Cost: 30
+
+GET historical event odds
+Endpoint
+
+Example /v4/historical/sports/americanfootball_nfl/odds?
+markets=h2h,spreads,totals&regions=us&...
+
+Parameters
+
+1 market, 3 regions
+
+Schema
+
+Cost: 30
+
+Example Request
+
+Example /v4/historical/sports/soccer_epl/odds?markets=h2h&regions=us,uk,eu&...
+
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+31/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+3 markets, 3 regions
+Cost: 90
+Response Headers
+
+Example: /v4/historical/sports/basketball_nba/odds?
+
+Usage Quota Costs
+
+markets=h2h,spreads,totals&regions=us,uk,au&...
+
+Home
+
+API
+
+Sheets
+
+Account
+
+GET historical odds
+Endpoint
+Parameters
+Schema
+
+Keeping track of quota usage
+
+Example Request
+
+To keep track of usage credits, every API response includes the following response
+
+Example Response
+
+headers:
+
+Response Headers
+Usage Quota Costs
+More info
+
+x-requests-remaining The usage credits remaining until the quota resets
+x-requests-used The usage credits used since the last quota reset
+x-requests-last The usage cost of the last API call
+
+GET historical events
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+
+GET historical event odds
+Endpoint
+
+More info
+Responses with empty data do not count towards the usage quota.
+Prior to Septemer 18th 2022, only decimal odds were caputred in historical snapshots.
+American odds before this time are calculated from decimal odds and may include small
+rounding errors.
+Data errors aren't common but they can occur from time to time. We are usually quick to
+correct errors in the current odds API, however they can still be present in historical odds
+snapshots. In future we plan to remove known errors from historical snapshots.
+
+Parameters
+
+Bookmakers, sports and markets will only be available in the historical odds API from the
+
+Schema
+
+time that they were added to the current odds API.
+
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+32/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+Home
+
+Response Headers
+Usage Quota Costs
+
+GET historical odds
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+More info
+
+API
+
+Sheets
+
+Account
+
+GET historical events
+Returns a list of historical events as they appeared in the API at the given timestamp ( date
+parameter). This includes events that had odds available at the query's timestamp. The
+response includes event ID, home and away teams, and the commence time for each event.
+Odds are not included in the response. This endpoint can be used to find historical event IDs
+to be used in the historical event odds endpoint. This endpoint is only available on paid usage
+plans.
+
+Endpoint
+
+GET historical events
+Endpoint
+
+GET /v4/historical/sports/{sport}/events?apiKey={apiKey}&date={date}
+
+Parameters
+Schema
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+
+GET historical event odds
+Endpoint
+Parameters
+Schema
+
+Parameters
+sport The sport key obtained from calling the /sports endpoint
+apiKey The API key associated with your subscription. See usage plans
+date The timestamp of the data snapshot to be returned, specified in ISO8601 format, for
+example 2021-10-18T12:00:00Z The historical odds API will return the closest snapshot
+equal to or earlier than the provided date parameter.
+
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+33/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+dateFormat Optional - Determines the format of timestamps in the response. Valid values
+are unix and iso (ISO 8601). Defaults to iso .
+Response Headers
+Usage Quota Costs
+
+GET historical odds
+
+Home
+
+API
+
+Sheets
+
+Account
+
+eventIds Optional - Comma-separated game ids. Filters the response to only return games
+with the specified ids.
+
+Endpoint
+
+commenceTimeFrom Optional - filter the response to show games that commence on and
+
+Parameters
+
+after this parameter. Values are in ISO 8601 format, for example 2023-09-09T00:00:00Z. This
+
+Schema
+
+parameter has no effect if the sport is set to 'upcoming'.
+
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+More info
+
+GET historical events
+
+commenceTimeTo Optional - filter the response to show games that commence on and
+before this parameter. Values are in ISO 8601 format, for example 2023-09-10T23:59:59Z.
+This parameter has no effect if the sport is set to 'upcoming'.
+
+includeRotationNumbers Optional - if true , the response will include the home and away
+rotation numbers if available. See this link for details. Valid values are true or false .
+
+Endpoint
+Parameters
+Schema
+Example Request
+
+Schema
+For the detailed API spec, see the Swagger API docs
+
+Example Response
+Response Headers
+Usage Quota Costs
+
+GET historical event odds
+Endpoint
+Parameters
+
+Example Request
+GET https://api.the-odds-api.com/v4/historical/sports/basketball_nba/events?
+apiKey=YOUR_API_KEY&date=2023-11-29T22:42:00Z
+
+Schema
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+Example Response
+34/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+The response schema is almost the same as that of the /events endpoint, but wrapped in a
+Home
+
+structure that contains information about the snapshot, including:
+Response Headers
+Usage Quota Costs
+
+GET historical odds
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+More info
+
+GET historical events
+Endpoint
+
+previous_timestamp: the preceding available timestamp. This can be used as the date
+parameter in a new request to move back in time.
+next_timestamp: The next available timestamp. This can be used as the date parameter in a
+new request to move forward in time.
+json
+
+{
+"timestamp": "2023-11-29T22:40:39Z",
+"previous_timestamp": "2023-11-29T22:35:39Z",
+"next_timestamp": "2023-11-29T22:45:40Z",
+"data": [
+{
+"id": "da359da99aa27e97d38f2df709343998",
+"sport_key": "basketball_nba",
+"sport_title": "NBA",
+
+Example Request
+
+"commence_time": "2023-11-30T00:10:00Z",
+"home_team": "Detroit Pistons",
+
+Example Response
+
+"away_team": "Los Angeles Lakers"
+
+Response Headers
+
+},
+
+Usage Quota Costs
+
+{
+
+Parameters
+Schema
+
+Account
+
+equal to or earlier than the provided date parameter.
+
+Schema
+
+Endpoint
+
+Sheets
+
+timestamp: The timestamp of the snapshot. This will be the closest available timestamp
+
+Parameters
+
+GET historical event odds
+
+API
+
+"id": "0a502b246aa29f8ac2edb7a3ddf71ae9",
+"sport_key": "basketball_nba",
+"sport_title": "NBA",
+"commence_time": "2023-11-30T00:10:00Z",
+"home team": "Orlando Magic"
+
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+35/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+Home
+
+Response Headers
+Usage Quota Costs
+
+GET historical odds
+Endpoint
+Parameters
+Schema
+Example Request
+
+API
+
+Sheets
+
+Account
+
+Response Headers
+The following response headers are returned
+
+x-requests-remaining The usage credits remaining until the quota resets
+x-requests-used The usage credits used since the last quota reset
+x-requests-last The usage cost of the last API call
+
+Example Response
+Response Headers
+Usage Quota Costs
+More info
+
+Usage Quota Costs
+This endpoint costs 1 from usage quota. If no events are found, it will not cost.
+
+GET historical events
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+
+GET historical event odds
+Endpoint
+
+GET historical event odds
+Returns historical odds for a single event as they appeared at a specified timestamp. Accepts
+any available betting markets using the markets parameter. Historical data for additional
+markets (player props, alternate lines, period markets) are available after 2023-0503T05:30:00Z. This endpoint is only available on paid usage plans.
+
+Tip
+
+Parameters
+
+When querying historical odds for featured markets, the historical odds endpoint is
+
+Schema
+
+simpler to implement and more cost-effective.
+
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+36/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+Home
+
+Response Headers
+Usage Quota Costs
+
+API
+
+Sheets
+
+Account
+
+Endpoint
+
+GET historical odds
+Endpoint
+
+GET /v4/historical/sports/{sport}/events/{eventId}/odds?apiKey={apiKey}&regions=
+
+Parameters
+
+{regions}&markets={markets}&dateFormat={dateFormat}&oddsFormat=
+
+Schema
+
+{oddsFormat}&date={date}
+
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+More info
+
+GET historical events
+
+Parameters
+Parameters are the same as for the /odds endpoint, with additional parameters listed below.
+All available market keys are accepted in the markets parameter.
+
+Endpoint
+
+eventId The ID of a historical game, to be used in the URL path. Historical event ids can be
+
+Parameters
+
+found in the "id" field in the response of the historical events endpoint.
+
+Schema
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+
+GET historical event odds
+
+date The timestamp of the data snapshot to be returned, specified in ISO8601 format, for
+example 2023-11-29T22:42:00Z The historical odds API will return the closest snapshot
+equal to or earlier than the provided date parameter. Historical data for additional
+markets are available after 2023-05-03T05:30:00Z. Snapshots are available at 5 minute
+intervals.
+
+Endpoint
+
+includeMultipliers Optional. Applicable to US DFS sites. If true , the response will include
+
+Parameters
+
+the multipliers in each bet selection outcome if available. Valid values are true or false .
+
+Schema
+
+Defaults to false .
+
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+37/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+Home
+
+Response Headers
+Usage Quota Costs
+
+GET historical odds
+
+API
+
+Sheets
+
+Account
+
+Schema
+For the detailed API spec, see the Swagger API docs
+
+Endpoint
+Parameters
+Schema
+
+Example Request
+
+Example Request
+Example Response
+
+GET https://api.the-odds-
+
+Response Headers
+
+api.com/v4/historical/sports/basketball_nba/events/da359da99aa27e97d38f2df709343998/o
+
+Usage Quota Costs
+
+apiKey=YOUR_API_KEY&date=2023-11-
+
+More info
+
+29T22:45:00Z&regions=us&markets=player_points,h2h_q1
+
+GET historical events
+Endpoint
+Parameters
+Schema
+
+Example Response
+
+Example Request
+
+The response schema is almost the same as that of the /event odds endpoint, but wrapped in
+
+Example Response
+
+a structure that contains information about the snapshot, including:
+
+Response Headers
+Usage Quota Costs
+
+GET historical event odds
+Endpoint
+
+timestamp: The timestamp of the snapshot. This will be the closest available timestamp
+equal to or earlier than the provided date parameter.
+previous_timestamp: the preceding available timestamp. This can be used as the date
+parameter in a new request to move back in time.
+
+Parameters
+
+next_timestamp: The next available timestamp. This can be used as the date parameter in a
+
+Schema
+
+new request to move forward in time.
+
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+38/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+Home
+
+{
+
+Response Headers
+Usage Quota Costs
+
+GET historical odds
+Endpoint
+Parameters
+Schema
+
+"data": {
+"id": "da359da99aa27e97d38f2df709343998",
+"sport_key": "basketball_nba",
+"sport_title": "NBA",
+"commence_time": "2023-11-30T00:10:00Z",
+"away_team": "Los Angeles Lakers",
+
+GET historical events
+Endpoint
+Parameters
+
+"bookmakers": [
+{
+"key": "draftkings",
+"title": "DraftKings",
+"last_update": "2023-11-29T22:40:09Z",
+"markets": [
+{
+"key": "h2h q1"
+
+Schema
+Example Request
+Example Response
+Response Headers
+Usage Quota Costs
+
+GET historical event odds
+Endpoint
+
+Account
+
+"next_timestamp": "2023-11-29T22:45:40Z",
+
+Example Response
+
+More info
+
+json
+
+"previous_timestamp": "2023-11-29T22:35:39Z",
+
+"home_team": "Detroit Pistons",
+
+Usage Quota Costs
+
+Sheets
+
+"timestamp": "2023-11-29T22:40:39Z",
+
+Example Request
+
+Response Headers
+
+API
+
+Response Headers
+The following response headers are returned
+
+x-requests-remaining The usage credits remaining until the quota resets
+x-requests-used The usage credits used since the last quota reset
+x-requests-last The usage cost of the last API call
+
+Parameters
+Schema
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+Usage Quota Costs
+39/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+The usage quota cost depends on the number of markets and regions used in the request.
+Home
+
+Response Headers
+Usage Quota Costs
+
+API
+
+Sheets
+
+Account
+
+cost = 10 x [number of unique markets returned] x [number of regions specified]
+
+GET historical odds
+Endpoint
+Parameters
+Schema
+Example Request
+
+Examples of usage quota costs
+1 market, 1 region
+Cost: 10
+
+Example Response
+
+Example
+
+Response Headers
+
+/v4/historical/sports/americanfootball_nfl/events/a512a48a58c4329048174217b2cc7ce0/odds?
+
+Usage Quota Costs
+
+markets=player_pass_tds&regions=us&...
+
+More info
+
+GET historical events
+Endpoint
+Parameters
+Schema
+Example Request
+
+3 markets, 1 region
+Cost: 30
+Example
+/v4/historical/sports/americanfootball_nfl/events/a512a48a58c4329048174217b2cc7ce0/odds?
+markets=player_pass_tds,player_anytime_td,player_rush_longest&regions=us&...
+
+Example Response
+
+1 market, 3 regions
+
+Response Headers
+
+Cost: 30
+
+Usage Quota Costs
+
+Example
+
+GET historical event odds
+Endpoint
+
+/v4/historical/sports/basketball_nba/events/037d7b6bb128546961e2a06680f63944/odds?
+markets=player_points&regions=us,us2,au&...
+
+Parameters
+
+3 markets, 3 regions
+
+Schema
+
+Cost: 90
+
+Example Request
+
+Example:
+
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+40/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+/v4/historical/sports/basketball_nba/events/0b83beff5f82f8623eea93dbc1d7cd4e/odds?
+
+Home
+
+API
+
+Sheets
+
+markets=player_points,player_assists,alternate_spreads&regions=us,us2,au&...
+
+Account
+
+Response Headers
+Usage Quota Costs
+
+GET historical odds
+Endpoint
+
+Keeping track of quota usage
+
+Parameters
+
+To keep track of usage credits, every API response includes the following response
+
+Schema
+
+headers:
+
+Example Request
+
+x-requests-used
+
+Example Response
+
+x-requests-remaining
+
+Response Headers
+
+x-requests-last
+
+Usage Quota Costs
+More info
+
+GET historical events
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+Response Headers
+
+More info
+Responses with empty data do not count towards the usage quota.
+When calculating the market component of usage quota costs, a count of unique markets in
+the API response is used. For example if you specify 5 different markets and 1 region in the
+API call, and data is only available for 2 markets, the cost will be 10 x [2 markets] x [1 region]
+= 20
+
+Usage Quota Costs
+
+GET historical event odds
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+Rate Limiting (status code 429)
+Requests are rate limited in order to protect our systems from sudden bursts in traffic. If you
+enounter the rate limit, the API will respond with a status code of 429, in which case try
+41/42
+
+7/24/26, 12:12 PM
+
+Odds API Documentation V4 | The Odds API
+
+spacing out requests over several seconds. More information can be found here.
+Home
+
+Response Headers
+Usage Quota Costs
+
+GET historical odds
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+Response Headers
+
+API
+
+Sheets
+
+Account
+
+Code Samples
+Get started right away with code samples for Python and NodeJs. Code samples are also
+available on Github
+
+More Info
+Stay up to date on new sports, bookmakers and features by following us on Twitter
+
+Usage Quota Costs
+More info
+
+GET historical events
+Endpoint
+
+X.com •
+
+Parameters
+Schema
+
+Status
+
+•
+
+Terms
+
+Bluesky •
+•
+
+Github
+
+Privacy Policy
+
+•
+
+Contact
+
+Example Request
+Example Response
+
+© 2026 The Odds API
+
+Response Headers
+Usage Quota Costs
+
+GET historical event odds
+Endpoint
+Parameters
+Schema
+Example Request
+Example Response
+
+https://the-odds-api.com/liveapi/guides/v4/#overview
+
+42/42
+
+
